@@ -8,6 +8,9 @@ import MovingText from "./components/movingText";
 import ProductList from "../src/pages/Products/ProductList";
 import ContactPage from "./pages/contact";
 import ProductDetail from "./pages/Products/productDetails";
+import ScrollToTop from "./components/scroll2top"; // Import ScrollToTop
+import ProductListPage from "./components/homeComponents/CategoryProductList";
+import Footer from "./components/homeComponents/footer";
 
 const App: React.FC = () => {
   const [cart, setCart] = useState<any[]>([]);
@@ -63,6 +66,7 @@ const App: React.FC = () => {
 
   return (
     <Router>
+      <ScrollToTop /> {/* Add ScrollToTop here */}
       <MovingText />
       <Header />
       <div className="font-sans">
@@ -79,7 +83,9 @@ const App: React.FC = () => {
             element={<Cart cart={cart} updateQuantity={updateQuantity} removeFromCart={removeFromCart} />}
           />
           <Route path="/checkout" element={<Checkout cart={cart} />} />
+          <Route path="/products/:category" element={<ProductListPage />} />
         </Routes>
+        <Footer/>
       </div>
     </Router>
   );

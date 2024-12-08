@@ -46,6 +46,7 @@ const Cart: React.FC<{
 
       <div className="text-center  font-thin mb-4">
         <p>Get 5% Off First Purchase. Use the code <span className="font-semibold">ATB5OFF</span></p>
+        <p className="mt-2 text-gray-700">If you're sure items should be in your cart, kindly <button onClick={() => window.location.reload()} className="text-red-500 underline">refresh</button>.</p>
       </div>
 
       {cart.length === 0 ? (
@@ -55,8 +56,9 @@ const Cart: React.FC<{
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5 }}
         >
-          <p >Your cart is empty.</p>
-          <a href="/products" className="text-sm underline text-black font-semibold">Continue Shopping</a>
+          <p>Your cart is empty.</p>
+          <p className="mt-4 text-gray-700"> <Link to="/products" className="text-[#000] underline">continue shopping</Link>.</p>
+         
         </motion.div>
       ) : (
         <div className="overflow-x-auto max-w-full">
