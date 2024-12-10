@@ -652,7 +652,7 @@ sizes: ["36", "37", "38", "39", "40", "41"],
 sizes: ["36", "37", "38", "39", "40", "41"]
     },
     {
-      id: 39,
+      id: 40,
       name: "ATB Amber Slide",
       price: 18500,
       description: "The ATB Amber Slide features a warm, brown leather design that combines casual comfort with stylish elegance. Handcrafted by Adore The Brand (ATB), this versatile slide is perfect for relaxed, everyday wear, offering both durability and a chic look.",
