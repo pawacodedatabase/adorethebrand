@@ -2,10 +2,12 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { FaUser, FaPhoneAlt, FaMapMarkerAlt, FaEnvelope, FaCreditCard, FaMoneyBillWave } from "react-icons/fa";
+import { useLocation } from "react-router-dom";
+
 
 const Checkout: React.FC<{ cart: any[] }> = ({ cart }) => {
   const navigate = useNavigate(); // Initialize the navigate function
-  const deliveryFee = 1000; // Flat delivery fee in Naira (₦)
+  // Flat delivery fee in Naira (₦)
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
@@ -19,6 +21,12 @@ const Checkout: React.FC<{ cart: any[] }> = ({ cart }) => {
     senderBank: "",
     bitcoinAddress: "", // To store Bitcoin address
   });
+
+  const location = useLocation();
+  const { totalPrice, totalWithDiscount, deliveryFee } = location.state || {};
+
+
+
   const [orderId] = useState(generateOrderId()); // Generate a unique Order ID
 
   const today = new Date();
@@ -26,8 +34,7 @@ const Checkout: React.FC<{ cart: any[] }> = ({ cart }) => {
   expectedDeliveryDate.setDate(today.getDate() + 9); // Add 9 working days (excluding weekends)
 
   // Calculate the total price of items in the cart
-  const totalPrice = cart.reduce((total, item) => total + item.price * item.quantity, 0);
-  const grandTotal = totalPrice + deliveryFee;
+   const grandTotal = totalPrice + deliveryFee;
 
   // Handle form data changes
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
@@ -99,7 +106,7 @@ const Checkout: React.FC<{ cart: any[] }> = ({ cart }) => {
               </p>
             </div>
           ))}
-          <div className="mt-6 text-lg">
+          {/* <div className="mt-6 text-lg">
             <div className="flex justify-between">
               <p className="font-semibold text-gray-800">Subtotal:</p>
               <p className="text-gray-800">₦{totalPrice.toLocaleString()}</p>
@@ -111,7 +118,25 @@ const Checkout: React.FC<{ cart: any[] }> = ({ cart }) => {
             <div className="flex justify-between mt-4 font-semibold text-xl">
               <p className="text-gray-800">Total:</p>
               <p className="text-red-600">₦{grandTotal.toLocaleString()}</p>
-            </div>
+            </div> */}
+
+
+<div className="mt-6 text-lg">
+        <div className="flex justify-between">
+          <p className="font-semibold text-gray-800">Subtotal:</p>
+          <p className="text-gray-800">₦{totalPrice?.toLocaleString()}</p>
+        </div>
+        <div className="flex justify-between mt-2">
+          <p className="font-semibold text-gray-800">Delivery Fee:</p>
+          <p className="text-gray-800">₦{deliveryFee?.toLocaleString()}</p>
+        </div>
+        <div className="flex justify-between mt-4 font-semibold text-xl">
+          <p className="text-gray-800">Total:</p>
+          <p className="text-red-600">₦{totalWithDiscount?.toLocaleString()}</p>
+        </div>
+      </div>
+
+            
             <div className="mt-6">
               <p className="text-gray-600">Expected Delivery Date:</p>
               <p className="font-semibold text-gray-800">{expectedDeliveryDate.toDateString()}</p>
@@ -287,7 +312,7 @@ const Checkout: React.FC<{ cart: any[] }> = ({ cart }) => {
             
             {formData.paymentMethod === "bankTransfer" && (
               <div className="flex-1 bg-gray-100 p-4 rounded-lg">
-                <h3 className="font-semibold text-lg">Bank Transfer Details</h3>
+                <h3 className="font-semibold text-lg mb-3">Confirm Payment</h3>
                 <div className="space-y-4">
                   <div className="relative">
                     <div className="absolute right-3 top-3 text-red-600">
@@ -366,7 +391,7 @@ const Checkout: React.FC<{ cart: any[] }> = ({ cart }) => {
           </form>
         </div>
       </div>
-    </div>
+ 
   );
 };
 

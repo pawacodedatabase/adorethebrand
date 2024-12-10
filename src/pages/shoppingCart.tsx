@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { FaTrashAlt } from "react-icons/fa";
 import { motion } from "framer-motion"; // Importing framer-motion for animations
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Cart: React.FC<{
   cart: any[];
@@ -11,10 +11,40 @@ const Cart: React.FC<{
   const [promoCode, setPromoCode] = useState<string>(""); // State to track the entered promo code
   const [discountApplied, setDiscountApplied] = useState<boolean>(false); // Track if discount is applied
   const [error, setError] = useState<string>(""); // Track promo code error message
+  const [selectedState, setSelectedState] = useState<string>(""); // Track selected delivery state
 
-  const deliveryFee = 1500; // Delivery fee in Naira
+  // Mapping of Nigerian states to their delivery fees (in Naira)
+  const deliveryFees: Record<string, number> = {
+    Lagos: 2500,
+    Abuja: 5000,
+    Kano: 3500,
+    PortHarcourt: 3400,
+    Enugu: 1600,
+    Ibadan: 1100,
+    Benin : 6000,
+    Ekiti : 3000,
+    Akure : 2500,
+
+    // Add other states as needed
+  };
+
+  const navigate = useNavigate();
+
+  const handleProceedToCheckout = () => {
+    navigate("/checkout", {
+      state: {
+        totalPrice,
+        discountApplied,
+        totalWithDiscount,
+        deliveryFee: deliveryFees[selectedState] || 1500,
+      },
+    });
+  };
+
+  
+
   const totalPrice = cart.reduce((total, item) => total + item.price * item.quantity, 0);
-  const discount = 0.2; // 20% discount
+  const discount = 0.05; // 5% discount for valid promo code
 
   // Handle promo code validation and apply discount
   const handlePromoCode = () => {
@@ -29,8 +59,8 @@ const Cart: React.FC<{
 
   // Calculate the total with discount
   const totalWithDiscount = discountApplied
-    ? totalPrice * (1 - discount) + deliveryFee
-    : totalPrice + deliveryFee;
+    ? totalPrice * (1 - discount) + (deliveryFees[selectedState] || 1500)
+    : totalPrice + (deliveryFees[selectedState] || 1500);
 
   return (
     <div className="container mx-auto px-4 py-8 bg-white text-black">
@@ -44,7 +74,7 @@ const Cart: React.FC<{
         Your Shopping Cart
       </motion.h1>
 
-      <div className="text-center  font-thin mb-4">
+      <div className="text-center font-thin mb-4">
         <p>Get 5% Off First Purchase. Use the code <span className="font-semibold">ATB5OFF</span></p>
         <p className="mt-2 text-gray-700">If you're sure items should be in your cart, kindly <button onClick={() => window.location.reload()} className="text-red-500 underline">refresh</button>.</p>
       </div>
@@ -58,7 +88,6 @@ const Cart: React.FC<{
         >
           <p>Your cart is empty.</p>
           <p className="mt-4 text-gray-700"> <Link to="/products" className="text-[#000] underline">continue shopping</Link>.</p>
-         
         </motion.div>
       ) : (
         <div className="overflow-x-auto max-w-full">
@@ -150,6 +179,23 @@ const Cart: React.FC<{
       </div>
       {error && <p className="mt-2 text-red-500 text-center">{error}</p>}
 
+      {/* Delivery State Selector */}
+      <div className="mb-4">
+        <label className="text-lg font-medium">Location</label>
+        <select
+          value={selectedState}
+          onChange={(e) => setSelectedState(e.target.value)}
+          className="p-2 border rounded-md w-full text-black mt-2"
+        >
+          <option value="">Select a state</option>
+          {Object.keys(deliveryFees).map((state) => (
+            <option key={state} value={state}>
+              {state}
+            </option>
+          ))}
+        </select>
+      </div>
+
       {/* Cart Summary */}
       <div className="mt-10 bg-gray-100 p-6 rounded-md shadow-md">
         <div className="flex justify-between text-lg text-gray-700">
@@ -158,7 +204,7 @@ const Cart: React.FC<{
         </div>
         <div className="flex justify-between text-lg text-gray-700">
           <p>Delivery Fee:</p>
-          <p>₦{deliveryFee.toLocaleString()}</p>
+          <p>₦{(deliveryFees[selectedState] || 1500).toLocaleString()}</p>
         </div>
         {discountApplied && (
           <div className="flex justify-between text-sm text-green-500 font-bold">
@@ -174,16 +220,16 @@ const Cart: React.FC<{
 
       {/* Checkout Button */}
       <div className="text-center mt-8">
-      <Link to="/checkout">
         <motion.button
           className="w-full py-3 bg-red-500 text-white font-semibold text-lg rounded-md hover:bg-red-400 transition duration-300"
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
+          onClick={handleProceedToCheckout}
         >
           Proceed to Checkout
         </motion.button>
-        </Link>
       </div>
+    
     </div>
   );
 };

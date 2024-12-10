@@ -21,7 +21,7 @@ const ProductFilter: React.FC<{ products: Product[] }> = ({  }) => {
         <div className="absolute inset-0 bg-black opacity-50"></div>
         <Link to="/products/male" className="relative z-10 text-center text-white">
           <h2 className="font-semibold text-2xl mb-2">Male</h2>
-          <p className="text-sm">Click Here</p>
+          <p className="text-sm border  px-4 py-1 rounded-md hover:bg-black ">Click Here</p>
         </Link>
       </div>
 
@@ -35,7 +35,7 @@ const ProductFilter: React.FC<{ products: Product[] }> = ({  }) => {
         <div className="absolute inset-0 bg-black opacity-50"></div>
         <Link to="/products/female" className="relative z-10 text-center text-white">
           <h2 className="font-semibold text-2xl mb-2">Female</h2>
-          <p className="text-sm">Click Here</p>
+          <p className="text-sm border  px-4 py-1 rounded-md hover:bg-black ">Click Here</p>
         </Link>
       </div>
     </div>
@@ -46,7 +46,7 @@ const ProductFilter: React.FC<{ products: Product[] }> = ({  }) => {
 const CategoryPage: React.FC<{ products: Product[] }> = ({ products }) => {
   return (
     <div className="container mx-auto px-4 py-8">
-      <h1 className="text-center text-3xl font-bold mb-8">Our Products</h1>
+      <h1 className="text-center text-3xl font-thin mb-8">Our Products</h1>
       <ProductFilter products={products} />
     </div>
   );
