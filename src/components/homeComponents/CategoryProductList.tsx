@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { Product, products } from "../../pages/Products/products"; // Import the products array
-import { FaShoppingCart, FaHeart, FaEye } from "react-icons/fa";
+import {  products } from "../../pages/Products/products"; // Import the products array
+import {  FaEye } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import Pagination from "./pagination"; // Import Pagination component
 
