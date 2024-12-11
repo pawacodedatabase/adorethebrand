@@ -23,7 +23,7 @@ const Footer: React.FC = () => {
               <FaFacebookF size={24} />
             </a>
             <a
-              href="https://instagram.com"
+              href="https://instagram.com/adore_thebrand"
               target="_blank"
               rel="noopener noreferrer"
               className="text-white hover:text-red-600 transition duration-300"
@@ -31,7 +31,7 @@ const Footer: React.FC = () => {
               <FaInstagram size={24} />
             </a>
             <a
-              href="https://twitter.com"
+              href="https://twitter.com/adore_thebrand"
               target="_blank"
               rel="noopener noreferrer"
               className="text-white hover:text-red-600 transition duration-300"
@@ -57,7 +57,7 @@ const Footer: React.FC = () => {
           </div>
 
           {/* Newsletter Form */}
-          <form className="flex flex-col sm:flex-row items-center w-full sm:w-1/2">
+          <form className="flex flex-row sm:flex-row justify-center w-full sm:w-1/2">
             <input
               type="email"
               placeholder="Enter your email"
@@ -65,7 +65,7 @@ const Footer: React.FC = () => {
             />
             <button
               type="submit"
-              className="bg-red-600 text-white px-6 py-2 rounded-r-md mt-2 sm:mt-0 sm:ml-2 hover:bg-red-700 transition duration-300"
+              className="bg-red-600 text-white px-4 py-2 rounded-r-md  sm:mt-0 sm:ml-2 hover:bg-red-700 transition duration-300"
             >
               Subscribe
             </button>

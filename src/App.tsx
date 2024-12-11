@@ -12,8 +12,12 @@ import ScrollToTop from "./components/scroll2top"; // Import ScrollToTop
 import ProductListPage from "./components/homeComponents/CategoryProductList";
 import Footer from "./components/homeComponents/footer";
 
+import Wishlist from "./pages/Products/wishlist";
+import LegSizeGuide from "./pages/guide";
+
 const App: React.FC = () => {
   const [cart, setCart] = useState<any[]>([]);
+  const [wishlist, setWishlist] = useState<any[]>([]);
 
   // Load cart from localStorage when the app starts
   useEffect(() => {
@@ -21,16 +25,27 @@ const App: React.FC = () => {
     if (storedCart) {
       setCart(JSON.parse(storedCart));
     }
+
+    const storedWishlist = localStorage.getItem("wishlist");
+    if (storedWishlist) {
+      setWishlist(JSON.parse(storedWishlist));
+    }
   }, []);
 
-  // Store cart in localStorage when it changes
+  // Store cart and wishlist in localStorage when they change
   useEffect(() => {
     if (cart.length > 0) {
       localStorage.setItem("cart", JSON.stringify(cart));
     } else {
       localStorage.removeItem("cart");
     }
-  }, [cart]);
+
+    if (wishlist.length > 0) {
+      localStorage.setItem("wishlist", JSON.stringify(wishlist));
+    } else {
+      localStorage.removeItem("wishlist");
+    }
+  }, [cart, wishlist]);
 
   // Add product to cart or update its quantity
   const addToCart = (product: any) => {
@@ -64,6 +79,18 @@ const App: React.FC = () => {
     setCart((prevCart) => prevCart.filter((item) => item.id !== productId));
   };
 
+  // Add product to wishlist
+  const addToWishlist = (product: any) => {
+    setWishlist((prevWishlist) => {
+      if (!prevWishlist.some((item) => item.id === product.id)) {
+        const updatedWishlist = [...prevWishlist, product];
+        localStorage.setItem("wishlist", JSON.stringify(updatedWishlist));
+        return updatedWishlist;
+      }
+      return prevWishlist;
+    });
+  };
+
   return (
     <Router>
       <ScrollToTop /> {/* Add ScrollToTop here */}
@@ -73,19 +100,29 @@ const App: React.FC = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="contact" element={<ContactPage />} />
+          <Route path="/wishlist" element={<Wishlist wishlist={wishlist} />} />
           <Route
             path="/products"
-            element={<ProductList addToCart={addToCart} updateQuantity={updateQuantity} cart={cart} />}
+            element={
+              <ProductList
+                addToCart={addToCart}
+                updateQuantity={updateQuantity}
+                cart={cart}
+                addToWishlist={addToWishlist}
+                wishlist={wishlist}
+              />
+            }
           />
-           <Route path="/product/:productId" element={<ProductDetail />} />
+          <Route path="/product/:productId" element={<ProductDetail />} />
           <Route
             path="/cart"
             element={<Cart cart={cart} updateQuantity={updateQuantity} removeFromCart={removeFromCart} />}
           />
           <Route path="/checkout" element={<Checkout cart={cart} />} />
           <Route path="/products/:category" element={<ProductListPage />} />
+          <Route path="/guide" element={<LegSizeGuide />} /> 
         </Routes>
-        <Footer/>
+        <Footer />
       </div>
     </Router>
   );

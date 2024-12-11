@@ -46,7 +46,16 @@ const ProductFilter: React.FC<{ products: Product[] }> = ({  }) => {
 const CategoryPage: React.FC<{ products: Product[] }> = ({ products }) => {
   return (
     <div className="container mx-auto px-4 py-8">
-      <h1 className="text-center text-3xl font-thin mb-8">Our Products</h1>
+
+      <Link to="products" className="border item-center flex justify-center px-2 py-2 m-4 bg-black text-[#fff] font-semibold  rounded-md  hover:bg-transparent hover:text-black">
+
+      CLICK HERE FOR ALL PRODUCTS 
+      
+      </Link>
+
+    
+      
+      <h1 className="text-center text-3xl font-thin mb-8">Category</h1>
       <ProductFilter products={products} />
     </div>
   );

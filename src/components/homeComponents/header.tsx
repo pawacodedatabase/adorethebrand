@@ -1,16 +1,10 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { FaShoppingCart, FaSearch, FaBars, FaTimes } from 'react-icons/fa';
+import { FaShoppingCart, FaHeart, FaBars, FaTimes } from 'react-icons/fa';
 import logo from '../../assets/logo.png';
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isSearchOpen, setIsSearchOpen] = useState(false);  // State for search bar visibility
-  const [searchQuery, setSearchQuery] = useState('');  // State for search input
-
-  const handleSearch = () => {
-    console.log('Search Query:', searchQuery); // Placeholder for search logic
-  };
 
   return (
     <header className="sticky top-0 bg-white z-50">
@@ -24,35 +18,52 @@ const Header: React.FC = () => {
 
         {/* Desktop Navigation */}
         <nav className="hidden lg:flex space-x-8 items-center text-gray-800 text-sm">
-          <Link to="/" className="hover:text-black transition">Home</Link>
-          <Link to="/products" className="hover:text-black transition">Shop</Link>
-          <Link to="/cart" className="hover:text-black transition">Cart</Link>
-          <Link to="/checkout" className="hover:text-black transition">Checkout</Link>
-
-          {/* Search Icon */}
-          <div
-            className="text-xl cursor-pointer text-gray-800"
-            onClick={() => setIsSearchOpen(!isSearchOpen)} // Toggle search bar visibility
+          <Link
+            to="/"
+            className="relative group font-medium text-gray-800 hover:text-black transition duration-300"
           >
-            <FaSearch />
-          </div>
-          <div className="text-xl cursor-pointer text-gray-800">
+            Home
+            <span className="absolute bottom-0 left-1/2 w-0 h-[2px] bg-black transition-all duration-300 transform -translate-x-1/2 group-hover:w-full group-hover:scale-x-100"></span>
+          </Link>
+          <Link
+            to="/products"
+            className="relative group font-medium text-gray-800 hover:text-black transition duration-300"
+          >
+            Shop
+            <span className="absolute bottom-0 left-1/2 w-0 h-[2px] bg-black transition-all duration-300 transform -translate-x-1/2 group-hover:w-full group-hover:scale-x-100"></span>
+          </Link>
+          <Link
+            to="/cart"
+            className="relative group font-medium text-gray-800 hover:text-black transition duration-300"
+          >
+            Cart
+            <span className="absolute bottom-0 left-1/2 w-0 h-[2px] bg-black transition-all duration-300 transform -translate-x-1/2 group-hover:w-full group-hover:scale-x-100"></span>
+          </Link>
+          <Link
+            to="/checkout"
+            className="relative group font-medium text-gray-800 hover:text-black transition duration-300"
+          >
+            Checkout
+            <span className="absolute bottom-0 left-1/2 w-0 h-[2px] bg-black transition-all duration-300 transform -translate-x-1/2 group-hover:w-full group-hover:scale-x-100"></span>
+          </Link>
+
+          {/* Wishlist Icon */}
+          <Link to="/wishlist" className="text-xl cursor-pointer text-gray-800">
+            <FaHeart />
+          </Link>
+
+          {/* Cart Icon */}
+          <Link to="/cart" className="text-xl cursor-pointer text-gray-800">
             <FaShoppingCart />
-          </div>
+          </Link>
         </nav>
 
         {/* Hamburger and Icons for Small Screens */}
         <div className="lg:hidden flex items-center space-x-4">
-         
-         <Link
-            to="/search"
-            className="text-xl cursor-pointer text-gray-800"
-            onClick={() => setIsSearchOpen(!isSearchOpen)} // Toggle search bar visibility
-          >
-            <FaSearch />
+          <Link to="/wishlist" className="text-xl cursor-pointer text-gray-800">
+            <FaHeart />
           </Link>
 
-       
           <Link to="/cart" className="text-xl cursor-pointer text-gray-800">
             <FaShoppingCart />
           </Link>
@@ -75,68 +86,57 @@ const Header: React.FC = () => {
               <Link
                 to="/"
                 onClick={() => setIsMenuOpen(false)}
-                className="block hover:text-black transition"
+                className="relative group block hover:text-black transition duration-300"
               >
                 Home
+                <span className="absolute bottom-0 left-1/2 w-0 h-[2px] bg-black transition-all duration-300 transform -translate-x-1/2 group-hover:w-full group-hover:scale-x-100"></span>
               </Link>
             </li>
-
             <hr />
             <li>
               <Link
                 to="/products"
                 onClick={() => setIsMenuOpen(false)}
-                className="block hover:text-black transition"
+                className="relative group block hover:text-black transition duration-300"
               >
                 Shop
+                <span className="absolute bottom-0 left-1/2 w-0 h-[2px] bg-black transition-all duration-300 transform -translate-x-1/2 group-hover:w-full group-hover:scale-x-100"></span>
               </Link>
             </li>
-
             <hr />
             <li>
               <Link
                 to="/cart"
                 onClick={() => setIsMenuOpen(false)}
-                className="block hover:text-black transition"
+                className="relative group block hover:text-black transition duration-300"
               >
                 Cart
+                <span className="absolute bottom-0 left-1/2 w-0 h-[2px] bg-black transition-all duration-300 transform -translate-x-1/2 group-hover:w-full group-hover:scale-x-100"></span>
               </Link>
             </li>
-
             <hr />
             <li>
               <Link
-                to="/checkout"
+                to="/wishlist"
                 onClick={() => setIsMenuOpen(false)}
-                className="block hover:text-black transition"
+                className="relative group block hover:text-black transition duration-300"
               >
-                Checkout
+                Wishlist
+                <span className="absolute bottom-0 left-1/2 w-0 h-[2px] bg-black transition-all duration-300 transform -translate-x-1/2 group-hover:w-full group-hover:scale-x-100"></span>
               </Link>
             </li>
-
             <hr />
+            <li>
+              <Link
+                to="/guide"
+                onClick={() => setIsMenuOpen(false)}
+                className="relative group block hover:text-black transition duration-300"
+              >
+                Guide
+                <span className="absolute bottom-0 left-1/2 w-0 h-[2px] bg-black transition-all duration-300 transform -translate-x-1/2 group-hover:w-full group-hover:scale-x-100"></span>
+              </Link>
+            </li>
           </ul>
-        </div>
-      )}
-
-      {/* Search Bar for Both Large and Small Screens */}
-      {isSearchOpen && (
-        <div className="absolute top-16 left-0 right-0 bg-white shadow-md p-4 z-40">
-          <div className="flex items-center space-x-2">
-            <input
-              type="text"
-              className="px-4 py-2 border border-gray-300 rounded-md w-full"
-              placeholder="Search..."
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)} // Update searchQuery state
-            />
-            <button
-              onClick={handleSearch} // Trigger search logic
-              className="bg-black text-white px-4 py-2 rounded-md"
-            >
-              Search
-            </button>
-          </div>
         </div>
       )}
     </header>

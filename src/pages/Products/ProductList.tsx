@@ -7,7 +7,9 @@ const ProductList: React.FC<{
   addToCart: (product: any) => void;
   updateQuantity: (productId: number, action: "increase" | "decrease") => void;
   cart: any[];
-}> = ({ addToCart, updateQuantity, cart }) => {
+  addToWishlist: (product: any) => void;
+  wishlist: any[];
+}> = ({ addToCart, updateQuantity, cart, addToWishlist, wishlist }) => {
   const [filters, setFilters] = useState({
     size: "",
     name: "",
@@ -48,6 +50,10 @@ const ProductList: React.FC<{
   const getItemQuantity = (productId: number) => {
     const item = cart.find((product) => product.id === productId);
     return item ? item.quantity : 0;
+  };
+
+  const isInWishlist = (productId: number) => {
+    return wishlist.some((item) => item.id === productId);
   };
 
   return (
@@ -107,7 +113,8 @@ const ProductList: React.FC<{
                   <FaShoppingCart />
                 </button>
                 <button
-                  className="bg-white text-red-500 p-2 rounded-full shadow hover:animate-pulse"
+                  onClick={() => addToWishlist(product)}
+                  className={`bg-white ${isInWishlist(product.id) ? "text-red-500" : "text-gray-500"} p-2 rounded-full shadow hover:animate-pulse`}
                   aria-label="Add to Wishlist"
                 >
                   <FaHeart />
@@ -122,7 +129,7 @@ const ProductList: React.FC<{
             </div>
             <div className="mt-4">
               <h2 className="text-lg font-bold">{product.name}</h2>
-              <p className="text-sm text-gray-500">{product.category}</p>
+              <p className="text-sm text-gray-500">{product.description}</p>
               <p className="text-xl font-semibold text-red-600">₦{product.price}</p>
               <div className="mt-4">
                 {getItemQuantity(product.id) > 0 ? (
@@ -144,7 +151,7 @@ const ProductList: React.FC<{
                     </button>
                   </div>
                 ) : (
-                  <div className="flex items-center space-x-4  justify-center">
+                  <div className="flex items-center space-x-4 justify-center">
                     <button
                       onClick={() => addToCart(product)}
                       className="mt-2 px-4 py-2 bg-black text-white rounded-md hover:bg-gray-800"

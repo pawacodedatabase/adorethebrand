@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { FaHeart, FaInstagram, FaEnvelope, FaShoppingCart } from "react-icons/fa";
 import { products } from "./products";
 import RelatedProducts from "./RelatedProd";
-import { Link } from "react-router-dom"; // For linking to the Cart page
 
 const ProductDetail: React.FC = () => {
   const { productId } = useParams<{ productId: string }>();
@@ -13,37 +12,47 @@ const ProductDetail: React.FC = () => {
 
   const [selectedImage, setSelectedImage] = useState(product.images[0]);
   const [cart, setCart] = useState<any[]>([]);
+  const [wishlist, setWishlist] = useState<any[]>([]);
 
-  // Load cart from localStorage when the component mounts
+  // Load cart and wishlist from localStorage when the component mounts
   useEffect(() => {
     const savedCart = localStorage.getItem("cart");
     if (savedCart) {
       setCart(JSON.parse(savedCart));
     }
+
+    const savedWishlist = localStorage.getItem("wishlist");
+    if (savedWishlist) {
+      setWishlist(JSON.parse(savedWishlist));
+    }
   }, []);
 
   const addToCart = () => {
-    // Check if the product already exists in the cart
     const existingItem = cart.find((item) => item.id === product.id);
     let updatedCart;
     if (existingItem) {
-      // Update quantity if product already in cart
       updatedCart = cart.map((item) =>
-        item.id === product.id
-          ? { ...item, quantity: item.quantity + 1 }
-          : item
+        item.id === product.id ? { ...item, quantity: item.quantity + 1 } : item
       );
     } else {
-      // Add new product with quantity 1
       updatedCart = [...cart, { ...product, quantity: 1 }];
     }
 
-    // Update cart state and localStorage
     setCart(updatedCart);
     localStorage.setItem("cart", JSON.stringify(updatedCart));
   };
 
-  // Calculate total items in the cart
+  const addToWishlist = () => {
+    const existingItem = wishlist.find((item) => item.id === product.id);
+    if (existingItem) {
+      alert("This product is already in your wishlist!");
+    } else {
+      const updatedWishlist = [...wishlist, product];
+      setWishlist(updatedWishlist);
+      localStorage.setItem("wishlist", JSON.stringify(updatedWishlist));
+    }
+  };
+
   const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
 
   return (
@@ -88,13 +97,27 @@ const ProductDetail: React.FC = () => {
             <p className="text-sm text-gray-500 mb-4">{product.category}</p>
 
             <div className="space-y-4">
-              <p className="font-medium text-gray-800">Description</p>
-              <p className="text-gray-600">{product.description}</p>
+              <p className="font-thin text-gray-800 text-center">Available Sizes</p>
+              <div className="flex flex-wrap gap-4 justify-center ">
+                {product.sizes?.map((size, index) => (
+                  <button
+                    key={index}
+                    className="w-12 h-12 flex items-center justify-center text-gray-900 font-thin border border-gray-300 rounded-md hover:bg-gray-100 hover:border-black transition-all duration-200"
+                  >
+                    {size}
+                  </button>
+                ))}
+              </div>
             </div>
 
             <div className="space-y-4">
-              <p className="font-medium text-gray-800">About Our Brand</p>
-              <p className="text-gray-600">
+              <p className="font-thin text-gray-800 text-center">Description</p>
+              <p className="text-gray-500 text-center p-3 ">{product.description}</p>
+            </div>
+
+            <div className="space-y-4">
+              <p className="font-thin text-gray-800 text-center">About Our Brand</p>
+              <p className="text-gray-500 text-center p-3 ">
                 Our bespoke shoes are designed to offer unmatched comfort and style. We use
                 high-quality materials to craft shoes that perfectly fit your feet. Whether
                 you need elegant dress shoes or casual wear, our brand guarantees both luxury
@@ -104,15 +127,18 @@ const ProductDetail: React.FC = () => {
             </div>
 
             {/* Add to Wishlist */}
-            <div className="flex items-center space-x-4 mb-6">
-              <button className="bg-white text-red-600 py-2 px-6 rounded-md border-2 border-red-600 hover:bg-red-600 hover:text-white transition-all duration-300 flex items-center space-x-2">
+            <div className="flex justify-center space-x-4 mb-6">
+              <button
+                onClick={addToWishlist}
+                className="bg-white text-red-600 py-2 px-6 rounded-md border-2 border-red-600 hover:bg-red-600 hover:text-white transition-all duration-300 flex items-center space-x-2"
+              >
                 <FaHeart />
                 <span>Add to Wishlist</span>
               </button>
             </div>
 
             {/* Add to Cart */}
-            <div className="flex items-center space-x-4 mb-6">
+            <div className="flex justify-center space-x-4 mb-6">
               <button
                 onClick={addToCart}
                 className="bg-red-600 text-white py-2 px-6 rounded-md hover:bg-red-700 transition-all duration-300 flex items-center space-x-2"
@@ -123,9 +149,9 @@ const ProductDetail: React.FC = () => {
             </div>
 
             {/* Social Media Links */}
-            <div className="flex space-x-4">
+            <div className="flex space-x-4 justify-center text-xl">
               <a
-                href="https://www.instagram.com/yourbrand"
+                href="https://www.instagram.com/adore_thebrand"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-700 hover:text-black"
@@ -133,7 +159,7 @@ const ProductDetail: React.FC = () => {
                 <FaInstagram />
               </a>
               <a
-                href="mailto:yourbrand@email.com"
+                href="adore_footies@yahoo.com"
                 className="text-gray-700 hover:text-black"
               >
                 <FaEnvelope />

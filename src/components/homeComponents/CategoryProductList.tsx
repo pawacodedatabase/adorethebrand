@@ -43,17 +43,7 @@ const ProductListPage: React.FC = () => {
   );
 
   // Add to cart function
-  const addToCart = (product: Product) => {
-    setCart((prevCart) => {
-      const existingProduct = prevCart.find((item) => item.id === product.id);
-      if (existingProduct) {
-        return prevCart.map((item) =>
-          item.id === product.id ? { ...item, quantity: item.quantity + 1 } : item
-        );
-      }
-      return [...prevCart, { ...product, quantity: 1 }];
-    });
-  };
+
 
   // Update quantity in cart
   const updateQuantity = (productId: number, action: "increase" | "decrease") => {
@@ -124,7 +114,7 @@ const ProductListPage: React.FC = () => {
                 className="w-full h-60 object-cover rounded-md"
               />
               <div className="absolute inset-0 flex items-center justify-center space-x-4 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition duration-300">
-                <button
+                {/* <button
                   onClick={() => addToCart(product)}
                   className="bg-white text-black p-2 rounded-full shadow hover:animate-bounce"
                   aria-label="Add to Cart"
@@ -136,7 +126,7 @@ const ProductListPage: React.FC = () => {
                   aria-label="Add to Wishlist"
                 >
                   <FaHeart />
-                </button>
+                </button> */}
                 <Link
                   to={`/product/${product.id}`}
                   className="bg-white text-gray-500 p-2 rounded-full shadow hover:animate-spin"
@@ -170,12 +160,12 @@ const ProductListPage: React.FC = () => {
                   </div>
                 ) : (
                   <div className="flex items-center space-x-4 justify-center">
-                    <button
+                    {/* <button
                       onClick={() => addToCart(product)}
                       className="mt-2 px-4 py-2 bg-black text-white rounded-md hover:bg-gray-800"
                     >
                       Add to Cart
-                    </button>
+                    </button> */}
                     {/* View Product Button */}
                     <Link
                       to={`/product/${product.id}`}

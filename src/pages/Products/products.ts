@@ -204,7 +204,7 @@ import band_4 from './images/band_4.jpg';
         malslli_1, malslli_2, malslli_3, malslli_4, malslli_5
       ],
       category: "male",
-      sizes: ["40", "39", "44", "42", "45" , ""],
+      sizes: ["40", "39", "44", "42", "45" ],
     },
     {
       id: 2,
