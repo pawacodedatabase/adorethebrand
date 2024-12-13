@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { FaShoppingCart, FaHeart, FaBars, FaTimes } from 'react-icons/fa';
+import { FaShoppingCart, FaHeart, FaBars, FaTimes, FaShoppingBasket, FaShoppingBag } from 'react-icons/fa';
 import logo from '../../assets/logo.png';
 
 const Header: React.FC = () => {
@@ -60,12 +60,15 @@ const Header: React.FC = () => {
 
         {/* Hamburger and Icons for Small Screens */}
         <div className="lg:hidden flex items-center space-x-4">
-          <Link to="/wishlist" className="text-xl cursor-pointer text-gray-800">
+          <Link to="/wishlist" className="text-xl cursor-pointer text-gray-800 hover:text-red-500 ">
             <FaHeart />
           </Link>
 
-          <Link to="/cart" className="text-xl cursor-pointer text-gray-800">
+          <Link to="/cart" className="text-xl cursor-pointer text-gray-800 hover:text-red-500 ">
             <FaShoppingCart />
+          </Link>
+          <Link to="/products" className="text-xl cursor-pointer text-gray-800 hover:text-red-500 ">
+            <FaShoppingBag />
           </Link>
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
