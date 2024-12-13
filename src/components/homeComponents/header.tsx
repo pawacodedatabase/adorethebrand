@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { FaShoppingCart, FaHeart, FaBars, FaTimes, FaShoppingBasket, FaShoppingBag } from 'react-icons/fa';
+import { FaShoppingCart, FaHeart, FaBars, FaTimes, FaShoppingBag } from 'react-icons/fa';
 import logo from '../../assets/logo.png';
 
 const Header: React.FC = () => {
