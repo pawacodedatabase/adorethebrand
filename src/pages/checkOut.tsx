@@ -293,7 +293,7 @@ const Checkout: React.FC<{ cart: any[] }> = ({ cart }) => {
                   <div className="mt-4">
                     <div className="relative mb-4">
                       <input
-                        value="Bitcoin Address"
+                        value="Not available yet"
                         required
                         className="w-full px-4 py-3 border-b focus:outline-none"
                       />
