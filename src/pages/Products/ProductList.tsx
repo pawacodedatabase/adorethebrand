@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { products } from "./products"; // Assuming product data is here
 import { FaShoppingCart, FaHeart, FaEye } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import EmailPopup from "../../components/Banner";
 
 const ProductList: React.FC<{
   addToCart: (product: any) => void;
@@ -57,6 +58,8 @@ const ProductList: React.FC<{
   };
 
   return (
+    <>
+    <EmailPopup/>
     <div className="container mx-auto px-4 py-8 font-sans text-gray-800">
       <h1 className="text-4xl font-semibold text-center mb-6">Shop Our Collection</h1>
 
@@ -104,8 +107,8 @@ const ProductList: React.FC<{
             >
               {/* Sale Banner */}
               {product.onSale && (
-                <div className="absolute top-2 left-2 bg-red-500 text-white text-sm font-bold px-2 py-1 rounded-md shadow-md z-10">
-                  Sale
+                <div className="absolute top-2 left-2 bg-red-500 text-white text-sm font-bold px-7 py-1  shadow-md z-10">
+                  On Sale
                 </div>
               )}
 
@@ -225,7 +228,7 @@ const ProductList: React.FC<{
           </button>
         </Link>
       </div>
-    </div>
+    </div></>
   );
 };
 

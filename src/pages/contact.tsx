@@ -41,9 +41,9 @@ const ContactPage: React.FC = () => {
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100 px-4">
       <div className="bg-white p-8 rounded-lg shadow-lg max-w-md w-full">
-        <h1 className="text-2xl font-semibold text-center mb-6 text-gray-800">Thank You! {formData.name}</h1>
+        <h1 className="text-2xl font-semibold text-center mb-6 text-gray-800">Thank You! <span className="text-red-500 ">{formData.name}</span> </h1>
         <p className="text-center text-gray-600 mb-4">
-          Your payment confirmation has been sent successfully.  {orderId}
+          Your payment confirmation has been sent successfully. <span className="text-red-500 font-semibold">{orderId}</span> 
         </p>
         <p className="text-center text-gray-800 mb-4">
           Please send your payment receipt via WhatsApp to complete the process and subscribe to our newsletter for updates.
