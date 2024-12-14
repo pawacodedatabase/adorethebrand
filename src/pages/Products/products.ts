@@ -292,6 +292,8 @@ import band_4 from './images/band_4.jpg';
       ],
       category: "male",
       sizes: ["39", "40", "41", "42", "43", "44", "45"],
+      onSale: true,
+      originalPrice: 18000
     },
     {
       id: 14,
@@ -655,7 +657,9 @@ sizes: ["36", "37", "38", "39", "40", "41"],
   
       ],
       category: "female",
-sizes: ["36", "37", "38", "39", "40", "41"]
+sizes: ["36", "37", "38", "39", "40", "41"],
+onSale: true,
+      originalPrice: 18000
     },
     {
       id: 40,
