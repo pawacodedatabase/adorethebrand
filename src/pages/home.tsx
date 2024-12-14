@@ -5,12 +5,14 @@ import { products } from "../pages/Products/products";
 import RandomProducts from './Products/RelatedProd';
 
 
+
 const Home: React.FC = () => {
   return (
 <>
 <HeroSection/>
 <CategoryPage products={products}/>
 <RandomProducts/>
+
 
 </>
   );

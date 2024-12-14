@@ -33,6 +33,13 @@ const Header: React.FC = () => {
             <span className="absolute bottom-0 left-1/2 w-0 h-[2px] bg-black transition-all duration-300 transform -translate-x-1/2 group-hover:w-full group-hover:scale-x-100"></span>
           </Link>
           <Link
+            to="/sale"
+            className="relative group font-medium text-gray-800 hover:text-black transition duration-300"
+          >
+            Sale
+            <span className="absolute bottom-0 left-1/2 w-0 h-[2px] bg-black transition-all duration-300 transform -translate-x-1/2 group-hover:w-full group-hover:scale-x-100"></span>
+          </Link>
+          <Link
             to="/cart"
             className="relative group font-medium text-gray-800 hover:text-black transition duration-300"
           >
@@ -116,6 +123,17 @@ const Header: React.FC = () => {
                 Cart
                 <span className="absolute bottom-0 left-1/2 w-0 h-[2px] bg-black transition-all duration-300 transform -translate-x-1/2 group-hover:w-full group-hover:scale-x-100"></span>
               </Link>
+            </li> <hr />
+            <li>
+             
+              <Link
+                to="/sale"
+                onClick={() => setIsMenuOpen(false)}
+                className="relative group block hover:text-black transition duration-300"
+              >
+              Sale
+                <span className="absolute bottom-0 left-1/2 w-0 h-[2px] bg-black transition-all duration-300 transform -translate-x-1/2 group-hover:w-full group-hover:scale-x-100"></span>
+              </Link>
             </li>
             <hr />
             <li>
@@ -139,7 +157,20 @@ const Header: React.FC = () => {
                 <span className="absolute bottom-0 left-1/2 w-0 h-[2px] bg-black transition-all duration-300 transform -translate-x-1/2 group-hover:w-full group-hover:scale-x-100"></span>
               </Link>
             </li>
+            <hr />
+            <div className='text-center'> <li>
+             <button 
+                onClick={() => setIsMenuOpen(false)}
+                 className='bg-black text-white px-3 py-2  hover:border hover:border-black hover:bg-white hover:text-black '>
+                Close Menu
+               
+              </button>
+            </li>
+              </div>
+
+     
           </ul>
+
         </div>
       )}
     </header>
