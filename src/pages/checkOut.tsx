@@ -27,7 +27,7 @@ const Checkout: React.FC<{ cart: any[] }> = ({ cart }) => {
 
   localStorage.setItem("checkoutFormData", JSON.stringify(formData));
 
-
+  const [loading, setLoading] = useState(false); 
   const [orderId] = useState(generateOrderId()); // Generate a unique Order ID
 
   const today = new Date();
@@ -46,6 +46,8 @@ const Checkout: React.FC<{ cart: any[] }> = ({ cart }) => {
   // Handle form submission for payment notification and redirect to confirmation page
   const handlePaymentConfirmation = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    setLoading(true);
   
     // Generate the order summary for Telegram
     const orderSummary = cart.map(item => {
@@ -69,11 +71,13 @@ const Checkout: React.FC<{ cart: any[] }> = ({ cart }) => {
         parse_mode: "Markdown",
       });
 
-      // After successful submission, navigate to the confirmation page
-      navigate("/contact", { state: { orderId, name: formData.senderName,  totalAmount: grandTotal } });
+      setTimeout(() => {
+        navigate("/contact", { state: { orderId, name: formData.senderName, totalAmount: grandTotal } });
+      }, 3000); // 3 seconds delay
     } catch (error) {
       console.error("Error sending payment confirmation:", error);
       alert("There was an issue notifying the admin.");
+      setLoading(false); // Hide loading if error occurs
     }
   };
 
@@ -375,12 +379,30 @@ const Checkout: React.FC<{ cart: any[] }> = ({ cart }) => {
             )}
 
             {/* Submit Button */}
-            <button type="submit" className="w-full bg-red-600 text-white py-3 rounded-lg mt-6">
-              Confirm Payment
+            <button
+              type="submit"
+              className="w-full bg-red-600 text-white py-3 rounded-lg mt-6"
+              disabled={loading} 
+            >
+              {loading ? "Processing..." : "Confirm Payment"}
             </button>
           </form>
+          {loading && (
+  <div className="fixed inset-0 bg-gray-800 bg-opacity-75 flex items-center justify-center z-50">
+    <div className="flex flex-col items-center space-y-4">
+      <div className="w-16 h-16 border-4 border-t-4 border-gray-300 border-t-red-600 rounded-full animate-spin"></div>
+      <div className="text-white text-2xl font-semibold">Processing your payment...</div>
+      <p className="text-white text-lg">Please wait while we finalize your order.</p>
+    </div>
+  </div>
+)}
+
         </div>
       </div>
+
+      
+    
+  
  
   );
 };
