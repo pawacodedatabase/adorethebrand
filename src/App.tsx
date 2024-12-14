@@ -99,7 +99,7 @@ const App: React.FC = () => {
       <div className="font-sans">
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="contact" element={<ContactPage />} />
+          <Route path="/contact" element={<ContactPage />} />
           <Route path="/wishlist" element={<Wishlist wishlist={wishlist} />} />
           <Route
             path="/products"

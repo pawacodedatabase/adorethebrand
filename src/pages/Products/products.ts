@@ -6,6 +6,8 @@ export interface Product {
     images: string[];
     category: "male" | "female" | "unisex";
     sizes: string[];
+    onSale? : true
+    originalPrice?: number;
   }
 
 
@@ -205,6 +207,8 @@ import band_4 from './images/band_4.jpg';
       ],
       category: "male",
       sizes: ["40", "39", "44", "42", "45" ],
+      onSale: true,
+      originalPrice: 10000
     },
     {
       id: 2,

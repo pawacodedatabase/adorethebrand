@@ -3,6 +3,9 @@ import { FaTrashAlt } from "react-icons/fa";
 import { motion } from "framer-motion"; // Importing framer-motion for animations
 import { Link, useNavigate } from "react-router-dom";
 
+
+
+
 const Cart: React.FC<{
   cart: any[];
   updateQuantity: (productId: number, action: "increase" | "decrease") => void;
@@ -21,10 +24,9 @@ const Cart: React.FC<{
     PortHarcourt: 3400,
     Enugu: 1600,
     Ibadan: 1100,
-    Benin : 6000,
-    Ekiti : 3000,
-    Akure : 2500,
-
+    Benin: 6000,
+    Ekiti: 3000,
+    Akure: 2500,
     // Add other states as needed
   };
 
@@ -36,14 +38,17 @@ const Cart: React.FC<{
         totalPrice,
         discountApplied,
         totalWithDiscount,
+        
         deliveryFee: deliveryFees[selectedState] || 1500,
       },
     });
   };
 
-  
+  const totalPrice = cart.reduce((total, item) => {
+    const effectivePrice = item.originalPrice || item.price; // Use originalPrice if it exists
+    return total + effectivePrice * item.quantity;
+  }, 0);
 
-  const totalPrice = cart.reduce((total, item) => total + item.price * item.quantity, 0);
   const discount = 0.05; // 5% discount for valid promo code
 
   // Handle promo code validation and apply discount
@@ -75,8 +80,20 @@ const Cart: React.FC<{
       </motion.h1>
 
       <div className="text-center font-thin mb-4">
-        <p>Get 5% Off First Purchase. Use the code <span className="font-semibold">ATB5OFF</span></p>
-        <p className="mt-2 text-gray-700">If you're sure items should be in your cart, kindly <button onClick={() => window.location.reload()} className="text-red-500 underline">refresh</button>.</p>
+        <p>
+          Get 5% Off First Purchase. Use the code{" "}
+          <span className="font-semibold">ATB5OFF</span>
+        </p>
+        <p className="mt-2 text-gray-700">
+          If you're sure items should be in your cart, kindly{" "}
+          <button
+            onClick={() => window.location.reload()}
+            className="text-red-500 underline"
+          >
+            refresh
+          </button>
+          .
+        </p>
       </div>
 
       {cart.length === 0 ? (
@@ -87,7 +104,13 @@ const Cart: React.FC<{
           transition={{ duration: 0.5 }}
         >
           <p>Your cart is empty.</p>
-          <p className="mt-4 text-gray-700"> <Link to="/products" className="text-[#000] underline">continue shopping</Link>.</p>
+          <p className="mt-4 text-gray-700">
+            {" "}
+            <Link to="/products" className="text-[#000] underline">
+              continue shopping
+            </Link>
+            .
+          </p>
         </motion.div>
       ) : (
         <div className="overflow-x-auto max-w-full">
@@ -102,58 +125,70 @@ const Cart: React.FC<{
               </tr>
             </thead>
             <tbody>
-              {cart.map((item) => (
-                <motion.tr
-                  key={item.id}
-                  className="border-b border-gray-300 bg-gray-50 hover:bg-gray-100 transition duration-300"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ duration: 0.5 }}
-                >
-                  <td className="py-4 px-6">
-                    <div className="flex items-center space-x-4">
-                      <img
-                        src={item.images[0]}
-                        alt={item.name}
-                        className="w-20 h-20 rounded-md object-cover"
-                      />
-                      <div className="max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl">
-                        <p className="font-thin text-gray-800 text-ellipsis overflow-hidden whitespace-nowrap w-60">
-                          {item.name}
-                        </p>
-                        <p className="text-sm text-gray-600">{item.size || "Size: n/a"}</p>
+              {cart.map((item) => {
+                const effectivePrice = item.originalPrice || item.price; // Use originalPrice if it exists
+
+                return (
+                  <motion.tr
+                    key={item.id}
+                    className="border-b border-gray-300 bg-gray-50 hover:bg-gray-100 transition duration-300"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ duration: 0.5 }}
+                  >
+                    <td className="py-4 px-6">
+                      <div className="flex items-center space-x-4">
+                        <img
+                          src={item.images[0]}
+                          alt={item.name}
+                          className="w-20 h-20 rounded-md object-cover"
+                        />
+                        <div className="max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl">
+                          <p className="font-thin text-gray-800 text-ellipsis overflow-hidden whitespace-nowrap w-60">
+                            {item.name}
+                          </p>
+                          <p className="text-sm text-gray-600">
+                            {item.size || "Size: n/a"}
+                          </p>
+                        </div>
                       </div>
-                    </div>
-                  </td>
-                  <td className="py-4 px-6 text-lg text-red-500 ">₦{item.price.toLocaleString()}</td>
-                  <td className="py-4 px-6">
-                    <div className="flex items-center space-x-2">
+                    </td>
+                    <td className="py-4 px-6 text-lg text-red-500 ">
+                      ₦{effectivePrice.toLocaleString()}
+                    </td>
+                    <td className="py-4 px-6">
+                      <div className="flex items-center space-x-2">
+                        <button
+                          onClick={() => updateQuantity(item.id, "decrease")}
+                          className="flex items-center justify-center w-8 h-8 bg-gray-200 rounded-full text-gray-600 hover:bg-gray-300 transition duration-200 ease-in-out"
+                        >
+                          <span className="font-bold text-lg">-</span>
+                        </button>
+                        <span className="text-lg font-bold text-gray-700">
+                          {item.quantity}
+                        </span>
+                        <button
+                          onClick={() => updateQuantity(item.id, "increase")}
+                          className="flex items-center justify-center w-8 h-8 bg-gray-200 rounded-full text-gray-600 hover:bg-gray-300 transition duration-200 ease-in-out"
+                        >
+                          <span className="font-bold text-lg">+</span>
+                        </button>
+                      </div>
+                    </td>
+                    <td className="py-4 px-6 text-lg text-black font-bold">
+                      ₦{(effectivePrice * item.quantity).toLocaleString()}
+                    </td>
+                    <td className="py-4 px-6">
                       <button
-                        onClick={() => updateQuantity(item.id, "decrease")}
-                        className="flex items-center justify-center w-8 h-8 bg-gray-200 rounded-full text-gray-600 hover:bg-gray-300 transition duration-200 ease-in-out"
+                        onClick={() => removeFromCart(item.id)}
+                        className="text-red-500 hover:text-red-700"
                       >
-                        <span className="font-bold text-lg">-</span>
+                        <FaTrashAlt size={20} />
                       </button>
-                      <span className="text-lg font-bold text-gray-700">{item.quantity}</span>
-                      <button
-                        onClick={() => updateQuantity(item.id, "increase")}
-                        className="flex items-center justify-center w-8 h-8 bg-gray-200 rounded-full text-gray-600 hover:bg-gray-300 transition duration-200 ease-in-out"
-                      >
-                        <span className="font-bold text-lg">+</span>
-                      </button>
-                    </div>
-                  </td>
-                  <td className="py-4 px-6 text-lg text-black font-bold">₦{(item.price * item.quantity).toLocaleString()}</td>
-                  <td className="py-4 px-6">
-                    <button
-                      onClick={() => removeFromCart(item.id)}
-                      className="text-red-500 hover:text-red-700"
-                    >
-                      <FaTrashAlt size={20} />
-                    </button>
-                  </td>
-                </motion.tr>
-              ))}
+                    </td>
+                  </motion.tr>
+                );
+              })}
             </tbody>
           </table>
         </div>
@@ -229,7 +264,6 @@ const Cart: React.FC<{
           Proceed to Checkout
         </motion.button>
       </div>
-    
     </div>
   );
 };

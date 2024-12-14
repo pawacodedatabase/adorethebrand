@@ -25,6 +25,7 @@ const Checkout: React.FC<{ cart: any[] }> = ({ cart }) => {
   const location = useLocation();
   const { totalPrice, totalWithDiscount, deliveryFee } = location.state || {};
 
+  localStorage.setItem("checkoutFormData", JSON.stringify(formData));
 
 
   const [orderId] = useState(generateOrderId()); // Generate a unique Order ID
@@ -69,7 +70,7 @@ const Checkout: React.FC<{ cart: any[] }> = ({ cart }) => {
       });
 
       // After successful submission, navigate to the confirmation page
-      navigate("/contact", { state: { orderId, totalAmount: grandTotal } });
+      navigate("/contact", { state: { orderId, name: formData.senderName,  totalAmount: grandTotal } });
     } catch (error) {
       console.error("Error sending payment confirmation:", error);
       alert("There was an issue notifying the admin.");
@@ -96,32 +97,21 @@ const Checkout: React.FC<{ cart: any[] }> = ({ cart }) => {
                   alt={item.name}
                   className="w-16 h-16 rounded-md"
                 />
-                <div>
-                  <p className="font-semibold text-gray-800">{item.name}</p>
+              
+              </div>
+              <p className="text-red-600 font-semibold">
+              {item.name}
+              </p>
+              <div>
+                  
                   <p className="text-gray-500">Qty: {item.quantity}</p>
                 </div>
-              </div>
-              <p className="text-red-600 font-bold">
-                ₦{(item.price * item.quantity).toLocaleString()}
-              </p>
             </div>
           ))}
-          {/* <div className="mt-6 text-lg">
-            <div className="flex justify-between">
-              <p className="font-semibold text-gray-800">Subtotal:</p>
-              <p className="text-gray-800">₦{totalPrice.toLocaleString()}</p>
-            </div>
-            <div className="flex justify-between mt-2">
-              <p className="font-semibold text-gray-800">Delivery Fee:</p>
-              <p className="text-gray-800">₦{deliveryFee.toLocaleString()}</p>
-            </div>
-            <div className="flex justify-between mt-4 font-semibold text-xl">
-              <p className="text-gray-800">Total:</p>
-              <p className="text-red-600">₦{grandTotal.toLocaleString()}</p>
-            </div> */}
+     
 
 
-<div className="mt-6 text-lg">
+<div className="mt-6 text-1xl">
         <div className="flex justify-between">
           <p className="font-semibold text-gray-800">Subtotal:</p>
           <p className="text-gray-800">₦{totalPrice?.toLocaleString()}</p>
@@ -138,8 +128,8 @@ const Checkout: React.FC<{ cart: any[] }> = ({ cart }) => {
 
             
             <div className="mt-6">
-              <p className="text-gray-600">Expected Delivery Date:</p>
-              <p className="font-semibold text-gray-800">{expectedDeliveryDate.toDateString()}</p>
+              <p className="text-gray-600 underline font-semibold">Expected Delivery Date:</p>
+              <p className="font-semibold text-red-400">{expectedDeliveryDate.toDateString()}</p>
             </div>
           </div>
         </div>
@@ -161,7 +151,7 @@ const Checkout: React.FC<{ cart: any[] }> = ({ cart }) => {
                   value={formData.name}
                   onChange={handleInputChange}
                   required
-                  className="w-full px-4 py-3 border-b"
+                  className="w-full px-4 py-3 border-b focus:outline-none"
                   placeholder="Full Name"
                 />
               </div>
@@ -177,7 +167,7 @@ const Checkout: React.FC<{ cart: any[] }> = ({ cart }) => {
                   value={formData.phone}
                   onChange={handleInputChange}
                   required
-                  className="w-full px-4 py-3 border-b"
+                  className="w-full px-4 py-3 border-b focus:outline-none"
                   placeholder="Phone Number"
                 />
               </div>
@@ -192,8 +182,8 @@ const Checkout: React.FC<{ cart: any[] }> = ({ cart }) => {
                   name="email"
                   value={formData.email}
                   onChange={handleInputChange}
-                  placeholder="Email Address (Optional)"
-                  className="w-full px-4 py-3 border-b"
+                  placeholder="Email Address "
+                  className="w-full px-4 py-3 border-b focus:outline-none"
                 />
               </div>
 
@@ -208,7 +198,7 @@ const Checkout: React.FC<{ cart: any[] }> = ({ cart }) => {
                   value={formData.address}
                   onChange={handleInputChange}
                   required
-                  className="w-full px-4 py-3 border-b "
+                  className="w-full px-4 py-3 border-b focus:outline-none "
                   placeholder="Address"
                 />
               </div>
@@ -221,7 +211,7 @@ const Checkout: React.FC<{ cart: any[] }> = ({ cart }) => {
                   value={formData.city}
                   onChange={handleInputChange}
                   placeholder="City (Optional)"
-                  className="w-full px-4 py-3 border-b"
+                  className="w-full px-4 py-3 border-b focus:outline-none"
                 />
               </div>
 
@@ -233,7 +223,7 @@ const Checkout: React.FC<{ cart: any[] }> = ({ cart }) => {
                   value={formData.zip}
                   onChange={handleInputChange}
                   placeholder="Postal Code (Optional)"
-                  className="w-full px-4 py-3 border-b "
+                  className="w-full px-4 py-3 border-b focus:outline-none"
                 />
               </div>
             </div>
@@ -245,7 +235,7 @@ const Checkout: React.FC<{ cart: any[] }> = ({ cart }) => {
                 name="paymentMethod"
                 value={formData.paymentMethod}
                 onChange={handleInputChange}
-                className="w-full px-4 py-3 border-b"
+                className="w-full px-4 py-3 border-b focus:outline-none"
               >
                 <option value="bankTransfer">Bank Transfer</option>
                 <option value="bitcoin">Bitcoin</option>
@@ -265,7 +255,7 @@ const Checkout: React.FC<{ cart: any[] }> = ({ cart }) => {
                         onChange={handleInputChange}
                         value="Bank Name: MoniePoint"
                         readOnly
-                        className="w-full px-4 py-3 border-b"
+                        className="w-full px-4 py-3 border-b focus:outline-none"
                       />
                     </div>
                     <div className="relative mb-4">
@@ -276,7 +266,7 @@ const Checkout: React.FC<{ cart: any[] }> = ({ cart }) => {
                         
                        
                         readOnly
-                        className="w-full px-4 py-3 border-b"
+                        className="w-full px-4 py-3 border-b focus:outline-none"
                       />
                     </div>
                     <div className="relative mb-4">
@@ -285,7 +275,7 @@ const Checkout: React.FC<{ cart: any[] }> = ({ cart }) => {
                       
                         value="Receiver's Name: Petal Lizzy"
                         readOnly
-                        className="w-full px-4 py-3 border-b"
+                        className="w-full px-4 py-3 border-b focus:outline-none"
                       />
                     </div>
                   </div>
@@ -301,7 +291,7 @@ const Checkout: React.FC<{ cart: any[] }> = ({ cart }) => {
                       <input
                         value="Bitcoin Address"
                         required
-                        className="w-full px-4 py-3 border-b"
+                        className="w-full px-4 py-3 border-b focus:outline-none"
                       />
                     </div>
                   </div>
@@ -325,7 +315,7 @@ const Checkout: React.FC<{ cart: any[] }> = ({ cart }) => {
                       value={formData.senderName}
                       onChange={handleInputChange}
                       required
-                      className="w-full px-4 py-3 border-b"
+                      className="w-full px-4 py-3 border-b focus:outline-none"
                       placeholder="Sender's Name"
                     />
                   </div>
@@ -341,7 +331,7 @@ const Checkout: React.FC<{ cart: any[] }> = ({ cart }) => {
                       value={formData.amount}
                       onChange={handleInputChange}
                       required
-                      className="w-full px-4 py-3 border-b"
+                      className="w-full px-4 py-3 border-b focus:outline-none"
                       placeholder="Amount"
                     />
                   </div>
@@ -357,7 +347,7 @@ const Checkout: React.FC<{ cart: any[] }> = ({ cart }) => {
                       value={formData.senderBank}
                       onChange={handleInputChange}
                       required
-                      className="w-full px-4 py-3 border-b"
+                      className="w-full px-4 py-3 border-b focus:outline-none"
                       placeholder="Sender's Bank"
                     />
                   </div>
@@ -376,7 +366,7 @@ const Checkout: React.FC<{ cart: any[] }> = ({ cart }) => {
                       name="bitcoinAddress"
                       value={formData.bitcoinAddress}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-3 border-b"
+                      className="w-full px-4 py-3 border-b focus:outline-none"
                       placeholder="Bitcoin Address"
                     />
                   </div>
