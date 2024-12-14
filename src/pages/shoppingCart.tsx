@@ -215,8 +215,8 @@ const Cart: React.FC<{
       {error && <p className="mt-2 text-red-500 text-center">{error}</p>}
 
       {/* Delivery State Selector */}
-      <div className="mb-4">
-        <label className="text-lg font-medium">Location</label>
+      <div className="mb-4 mt-7 text-center">
+        <label className="text-lg font-medium ">Delivery Location</label>
         <select
           value={selectedState}
           onChange={(e) => setSelectedState(e.target.value)}
