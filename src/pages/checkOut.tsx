@@ -258,7 +258,7 @@ const Checkout: React.FC<{ cart: any[] }> = ({ cart }) => {
                         type="text"
                         
                         onChange={handleInputChange}
-                        value="Bank Name: MoniePoint"
+                        value="Bank Name: Monie Point"
                         readOnly
                         className="w-full px-4 py-3 border-b focus:outline-none"
                       />
@@ -267,7 +267,7 @@ const Checkout: React.FC<{ cart: any[] }> = ({ cart }) => {
                       <input
                        
                         
-                        value='Account Number: 12345678'
+                        value='Account Number: 6669071253'
                         
                        
                         readOnly
@@ -278,7 +278,7 @@ const Checkout: React.FC<{ cart: any[] }> = ({ cart }) => {
                       <input
                         
                       
-                        value="Receiver's Name: Petal Lizzy"
+                        value="Receiver's Name: James Anuoluwapo"
                         readOnly
                         className="w-full px-4 py-3 border-b focus:outline-none"
                       />
