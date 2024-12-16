@@ -48,28 +48,27 @@ const Checkout: React.FC<{ cart: any[] }> = ({ cart }) => {
     e.preventDefault();
 
     setLoading(true);
-  
-    // Generate the order summary for Telegram
-    const orderSummary = cart.map(item => {
-      return `- ${item.name} (Qty: ${item.quantity}) - ₦${(item.price * item.quantity).toLocaleString()}`;
-    }).join("\n");
-  
-    // Send payment confirmation and details to the admin via Telegram bot
+
+
+    const formSubmissionData = {
+      access_key: "5f614b1b-3538-4a5a-81e0-ba90ad8545d0", // Replace with your Web3Form Access Key
+      subject: "New Payment Confirmation!",
+      from_name: formData.name,
+      email: formData.email,
+
+      message: `\n\nPayment Details:\n\n Order ID : ${orderId} \n\n - Sender's Name: ${formData.senderName}\n- Amount: ₦${formData.amount}\n- Shoe Size: ${formData.zip}\n- Sender's Bank: ${formData.senderBank}\n\nShipping Details:\n\n- Address: ${formData.address}, ${formData.city}\n- Phone: ${formData.phone}\n\nOrder Summary:\n${cart
+        .map(
+          (item) => `- ${item.name} (Qty: ${item.quantity}) - ₦${(item.price * item.quantity).toLocaleString()}`
+        )
+        .join("\n")}`,
+    };
+
     try {
-      const message = `
-        *New Payment Confirmation!*
-        - Sender's Name: ${formData.senderName}
-        - Amount: ₦${formData.amount}
-        - Sender's Bank: ${formData.senderBank}
-        - Order ID: ${orderId}
-        - Order Summary:
-        ${orderSummary}
-      `;
-      await axios.post("https://api.telegram.org/bot8119231817:AAGAmxzBGY0vBPeVFM2hEEBbXkoAUGxm_HE/sendMessage", {
-        chat_id: "6837437455",
-        text: message,
-        parse_mode: "Markdown",
+      await axios.post("https://api.web3forms.com/submit", formSubmissionData, {
+        headers: { "Content-Type": "application/json" },
       });
+  
+    
 
       setTimeout(() => {
         navigate("/contact", { state: { orderId, name: formData.senderName, totalAmount: grandTotal } });
@@ -221,12 +220,14 @@ const Checkout: React.FC<{ cart: any[] }> = ({ cart }) => {
 
               <div className="relative">
                 <input
-                  type="text"
+                  type="number"
+                  
                   id="zip"
                   name="zip"
+                  required
                   value={formData.zip}
                   onChange={handleInputChange}
-                  placeholder="Postal Code (Optional)"
+                  placeholder="Shoe Size"
                   className="w-full px-4 py-3 border-b focus:outline-none"
                 />
               </div>

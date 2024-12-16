@@ -51,7 +51,7 @@ const ContactPage: React.FC = () => {
 
         {/* WhatsApp Button */}
         <a
-          href={`https://wa.me/+2348053208997?text=${message}`}
+          href={`https://wa.me/+2349086471660?text=${message}`}
           target="_blank"
           rel="noopener noreferrer"
           className="w-full bg-green-600 text-white py-2 rounded-lg flex items-center justify-center space-x-2 mb-4"
