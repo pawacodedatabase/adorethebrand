@@ -131,7 +131,7 @@ const Header: React.FC = () => {
                 onClick={() => setIsMenuOpen(false)}
                 className="relative group block hover:text-black transition duration-300"
               >
-              Sale
+              Products On Sale
                 <span className="absolute bottom-0 left-1/2 w-0 h-[2px] bg-black transition-all duration-300 transform -translate-x-1/2 group-hover:w-full group-hover:scale-x-100"></span>
               </Link>
             </li>

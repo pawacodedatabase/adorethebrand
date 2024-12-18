@@ -15,6 +15,7 @@ import Footer from "./components/homeComponents/footer";
 import Wishlist from "./pages/Products/wishlist";
 import LegSizeGuide from "./pages/guide";
 import OnSaleProducts from "./components/onSale";
+import LegalTerms from "./components/homeComponents/LegalTerm";
 
 const App: React.FC = () => {
   const [cart, setCart] = useState<any[]>([]);
@@ -100,6 +101,7 @@ const App: React.FC = () => {
       <div className="font-sans">
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/legal" element={<LegalTerms />} />
           <Route
           path="/sale"
           element={<OnSaleProducts addToWishlist={addToWishlist} wishlist={wishlist} />}

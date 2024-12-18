@@ -151,7 +151,7 @@ const ProductDetail: React.FC = () => {
             {/* Social Media Links */}
             <div className="flex space-x-4 justify-center text-xl">
               <a
-                href="https://www.instagram.com/adore_thebrand"
+                href="https://www.instagram.com/adore_thebrand/profilecard/?igsh=MXZhdXNyc3B1ZzZ0MA=="
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-700 hover:text-black"
@@ -159,7 +159,7 @@ const ProductDetail: React.FC = () => {
                 <FaInstagram />
               </a>
               <a
-                href="adore_footies@yahoo.com"
+                href="mailto:adore_footies@yahoo.com"
                 className="text-gray-700 hover:text-black"
               >
                 <FaEnvelope />

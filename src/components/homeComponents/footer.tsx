@@ -1,5 +1,6 @@
 import React from "react";
 import { FaFacebookF, FaInstagram, FaTwitter, FaLinkedin } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const Footer: React.FC = () => {
   return (
@@ -23,7 +24,7 @@ const Footer: React.FC = () => {
               <FaFacebookF size={24} />
             </a>
             <a
-              href="https://instagram.com/adore_thebrand"
+              href="https://www.instagram.com/adore_thebrand/profilecard/?igsh=MXZhdXNyc3B1ZzZ0MA=="
               target="_blank"
               rel="noopener noreferrer"
               className="text-white hover:text-red-600 transition duration-300"
@@ -76,18 +77,23 @@ const Footer: React.FC = () => {
         <div className="mt-12 border-t border-gray-700 pt-6 text-center">
           <p className="text-gray-400 text-sm">&copy; 2024 AdoreTheBrand. All Rights Reserved.</p>
           <div className="mt-2">
-            <a href="/terms" className="text-gray-400 hover:text-white mx-2 text-sm">
-              Terms of Service
-            </a>
-            <a href="/privacy" className="text-gray-400 hover:text-white mx-2 text-sm">
-              Privacy Policy
-            </a>
-            <a href="/refunds" className="text-gray-400 hover:text-white mx-2 text-sm">
-              Refund Policy
-            </a>
-            <a href="/shipping" className="text-gray-400 hover:text-white mx-2 text-sm">
-              Shipping Info
-            </a>
+
+
+          <Link to="/legal" className="text-gray-400 hover:text-white mx-2 text-sm">Terms of Service
+          
+          </Link>  
+          <Link to="/legal" className="text-gray-400 hover:text-white mx-2 text-sm">Privacy Policy
+          
+          </Link>  
+          <Link to="/legal" className="text-gray-400 hover:text-white mx-2 text-sm">Refund Policy
+          
+          </Link>  
+          <Link to="/legal" className="text-gray-400 hover:text-white mx-2 text-sm">Shipping Info
+          
+          </Link>  
+            
+              
+           
           </div>
         </div>
       </div>
