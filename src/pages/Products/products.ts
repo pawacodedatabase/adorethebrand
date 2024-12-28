@@ -11,6 +11,12 @@ export interface Product {
   }
 
 
+  import fslide from './images/fslide.jpg';
+  import tho from './images/tho.jpg';
+  import bblack from './images/bblack.jpg';
+  import baki from './images/baki.jpg';
+
+
   import neeea_1 from './images/neeea_1.jpg';
 import neeea_2 from './images/neeea_2.jpg';
 import neeea_3 from './images/neeea_3.jpg';
@@ -37,6 +43,7 @@ import mnaoa_1 from './images/mnaoa_1.jpg';
 import mnaoa_2 from './images/mnaoa_2.jpg';
 import mnaoa_3 from './images/mnaoa_3.jpg';
 import mnaoa_4 from './images/mnaoa_4.jpg';
+import belt from './images/belt.jpg';
 
 
 
@@ -177,6 +184,7 @@ import mules_1_3 from './images/mules_3.jpg';
 import midnight_2 from './images/midnight_2.jpg';
 import midnight_3 from './images/midnight_3.jpg';
 import midnight_4 from './images/midnight_4.jpg';
+import bluess from './images/bluess.jpg';
 
 
 
@@ -191,6 +199,8 @@ import band_1 from './images/band_1.jpg';
 import band_2 from './images/band_2.jpg';
 import band_3 from './images/band_3.jpg';
 import band_4 from './images/band_4.jpg';
+import band_5 from './images/band5.jpg';
+import shu from './images/shuperu.jpg';
 
 
 
@@ -200,7 +210,7 @@ import band_4 from './images/band_4.jpg';
     {
       id: 1,
       name: "ATB Obsidian Slide",
-      price: 12000,
+      price: 15000,
       description: "Experience effortless style with the ATB Obsidian Slide. Crafted from premium black leather, this handmade bespoke footwear by Adore The Brand (ATB) blends sleek design with supreme comfort, perfect for casual elegance.",
       images: [
         malslli_1, malslli_2, malslli_3, malslli_4, malslli_5
@@ -208,7 +218,7 @@ import band_4 from './images/band_4.jpg';
       category: "male",
       sizes: ["40", "39", "44", "42", "45" ],
       onSale: true,
-      originalPrice: 10000
+      originalPrice: 12000
     },
     {
       id: 2,
@@ -223,6 +233,8 @@ import band_4 from './images/band_4.jpg';
       ],
       category: "male",
       sizes: ["39", "40", "41", "42", "43", "44", "45"],
+      onSale: true,
+      originalPrice: 28000
     },
     {
       id: 3,
@@ -235,6 +247,8 @@ import band_4 from './images/band_4.jpg';
       ],
       category: "male",
       sizes: ["39", "40", "41", "42", "43", "44", "45"],
+      onSale: true,
+      originalPrice: 28000
     },
     {
       id: 4,
@@ -248,17 +262,21 @@ import band_4 from './images/band_4.jpg';
       ],
       category: "male",
       sizes: ["39", "40", "41", "42", "43", "44", "45"],
+      onSale: true,
+      originalPrice: 28000
     },
     {
       id: 5,
       name: "ATB Double Sole ",
-      price: 18500,
+      price: 15000,
       description: "Sophistication and timeless style. Handcrafted with care, this bespoke piece from Adore The Brand (ATB) offers exceptional comfort and versatility, making it the perfect addition to any wardrobe.",
       images: [
        onx
       ],
       category: "male",
       sizes: ["39", "40", "41", "42", "43", "44", "45"],
+      onSale: true,
+      originalPrice: 12000
     },
     {
       id: 11,
@@ -270,6 +288,8 @@ import band_4 from './images/band_4.jpg';
       ],
       category: "female",
       sizes: ["36", "37", "38", "39", "40", "41"],
+      onSale: true,
+      originalPrice: 8000
     },
     {
       id: 12,
@@ -281,6 +301,8 @@ import band_4 from './images/band_4.jpg';
       ],
       category: "male" ,
       sizes: ["36", "37", "38", "39", "40", "41"],
+      onSale: true,
+      originalPrice: 15200
     },
     {
       id: 13,
@@ -293,7 +315,7 @@ import band_4 from './images/band_4.jpg';
       category: "male",
       sizes: ["39", "40", "41", "42", "43", "44", "45"],
       onSale: true,
-      originalPrice: 18000
+      originalPrice: 15200
     },
     {
       id: 14,
@@ -305,6 +327,8 @@ import band_4 from './images/band_4.jpg';
       ],
       category: "male",
       sizes: ["39", "40", "41", "42", "43", "44", "45"],
+      onSale: true,
+      originalPrice: 15200
     },
     {
       id: 15,
@@ -332,7 +356,7 @@ import band_4 from './images/band_4.jpg';
       category: "male",
       sizes: ["39", "40", "41", "42", "43", "44", "45"],
       onSale: true,
-      originalPrice: 18000
+      originalPrice: 16000
     },
     {
       id: 17,
@@ -345,6 +369,8 @@ import band_4 from './images/band_4.jpg';
       ],
       category: "male",
       sizes: ["39", "40", "41", "42", "43", "44", "45"],
+      onSale: true,
+      originalPrice: 14800
     },
     {
       id: 18,
@@ -358,6 +384,8 @@ import band_4 from './images/band_4.jpg';
       ],
       category: "male",
       sizes: ["39", "40", "41", "42", "43", "44", "45"],
+      onSale: true,
+      originalPrice: 14400
     },
     {
       id: 19,
@@ -371,6 +399,8 @@ import band_4 from './images/band_4.jpg';
       ],
       category: "male",
       sizes: ["39", "40", "41", "42", "43", "44", "45"],
+      onSale: true,
+      originalPrice: 16000
     },
     {
       id: 20,
@@ -383,6 +413,8 @@ import band_4 from './images/band_4.jpg';
       ],
       category: "female",
       sizes: ["36", "37", "38", "39", "40", "41"],
+      onSale: true,
+      originalPrice: 10400
     },
     {
       id: 21,
@@ -394,6 +426,8 @@ import band_4 from './images/band_4.jpg';
       ],
       category: "male",
       sizes: ["39", "40", "41", "42", "43", "44", "45"],
+      onSale: true,
+      originalPrice: 16000
     },
     {
       id: 22,
@@ -405,17 +439,21 @@ import band_4 from './images/band_4.jpg';
       ],
       category: "unisex",
       sizes: ["Pocket"],
+      onSale: true,
+      originalPrice: 10400
     },
     {
       id: 23,
       name: "ATB Cocoa Breeze Slide",
-      price: 9000,
+      price: 10000,
       description: "The ATB Cocoa Breeze Slide offers a perfect blend of elegance and comfort with its rich brown leather design. Handcrafted for the modern woman, this flat slide by Adore The Brand (ATB) provides effortless style and all-day wearability for casual chic occasions.",
       images: [
         slide
       ],
       category: "female",
       sizes: ["36", "37", "38", "39", "40", "41"],
+      onSale: true,
+      originalPrice: 8000
     },
     {
       id: 24,
@@ -428,17 +466,21 @@ import band_4 from './images/band_4.jpg';
       ],
       category: "male",
       sizes: ["39", "40", "41", "42", "43", "44", "45"],
+      onSale: true,
+      originalPrice: 12000
     },
     {
       id: 25,
       name: "ATB chic slide",
-      price: 9000,
+      price: 10000,
       description: "Breeze Slide offers a perfect blend of elegance and comfort with its rich brown leather design. Handcrafted for the modern woman, this flat slide by Adore The Brand (ATB) provides effortless style and all-day wearability for casual chic occasions.",
       images: [
        femsli
       ],
       category: "female",
       sizes: ["36", "37", "38", "39", "40", "41"],
+      onSale: true,
+      originalPrice: 8000
     },
     {
       id: 26,
@@ -454,6 +496,8 @@ import band_4 from './images/band_4.jpg';
       ],
       category: "unisex",
       sizes: ["36", "37", "38", "39", "40", "41"],
+      onSale: true,
+      originalPrice: 14800
     },
     {
       id: 27,
@@ -469,6 +513,8 @@ import band_4 from './images/band_4.jpg';
       
 category: "female",
 sizes: ["36", "37", "38", "39", "40", "41"],
+onSale: true,
+      originalPrice: 14800
     },
     {
       id: 28,
@@ -484,6 +530,8 @@ sizes: ["36", "37", "38", "39", "40", "41"],
       ],
       category: "male",
       sizes: ["39", "40", "41", "42", "43", "44", "45"],
+      onSale: true,
+      originalPrice: 28000
     },
     {
       id: 29,
@@ -499,6 +547,8 @@ sizes: ["36", "37", "38", "39", "40", "41"],
       ],
       category: "male",
       sizes: ["39", "40", "41", "42", "43", "44", "45"],
+      onSale: true,
+      originalPrice: 12000
     },
     {
       id: 30,
@@ -506,12 +556,14 @@ sizes: ["36", "37", "38", "39", "40", "41"],
       price:13000,
       description: "The ATB Denim Cross Slide combines the casual charm of denim with a unique cross strap design. Handcrafted by Adore The Brand (ATB), this stylish slide offers both comfort and a fresh, modern look, perfect for laid-back yet fashionable outings.",
       images: [
-        denim_1,
+        denim_3,
         denim_2,
-        denim_3
+        denim_1
       ],
       category: "unisex",
       sizes: ["39", "40", "41", "42", "43", "44", "45"],
+      onSale: true,
+      originalPrice: 10400
     },
     {
       id: 31,
@@ -526,6 +578,8 @@ sizes: ["36", "37", "38", "39", "40", "41"],
       ],
       category: "male",
       sizes: ["39", "40", "41", "42", "43", "44", "45"],
+      onSale: true,
+      originalPrice: 12000
     },
     {
       id: 32,
@@ -544,11 +598,13 @@ sizes: ["36", "37", "38", "39", "40", "41"],
       
 category: "female",
 sizes: ["36", "37", "38", "39", "40", "41"],
+onSale: true,
+      originalPrice: 14800
     },
     {
       id: 33,
       name: "ATB Simply Slips",
-      price: 9000,
+      price: 10000,
       description: "The ATB Simply Slips are the epitome of comfort and simplicity. Handcrafted with a minimalist design, these basic female slippers by Adore The Brand (ATB) offer a versatile, easy-to-wear option that pairs effortlessly with any casual look, perfect for everyday wear.",
       images: [
         seresm_1,
@@ -566,6 +622,8 @@ sizes: ["36", "37", "38", "39", "40", "41"],
       
 category: "female",
 sizes: ["36", "37", "38", "39", "40", "41"],
+onSale: true,
+      originalPrice: 8000
       
     },
     
@@ -582,6 +640,8 @@ sizes: ["36", "37", "38", "39", "40", "41"],
       ],
       category: "male",
       sizes: ["39", "40", "41", "42", "43", "44", "45"],
+      onSale: true,
+      originalPrice: 12000
     },
     
     {
@@ -596,6 +656,8 @@ sizes: ["36", "37", "38", "39", "40", "41"],
       ],
       category: "male",
       sizes: ["39", "40", "41", "42", "43", "44", "45"],
+      onSale: true,
+      originalPrice: 12000
     },
     
     {
@@ -609,6 +671,8 @@ sizes: ["36", "37", "38", "39", "40", "41"],
       ],
       category: "male",
       sizes: ["39", "40", "41", "42", "43", "44", "45"],
+      onSale: true,
+      originalPrice: 12000
     },
     
     {
@@ -626,6 +690,8 @@ sizes: ["36", "37", "38", "39", "40", "41"],
       ],
       category: "unisex",
       sizes: ["39", "40", "41", "42", "43", "44", "45"],
+      onSale: true,
+      originalPrice: 14800
     },
     
     {
@@ -642,6 +708,8 @@ sizes: ["36", "37", "38", "39", "40", "41"],
      
 category: "female",
 sizes: ["36", "37", "38", "39", "40", "41"],
+onSale: true,
+      originalPrice: 8000
     },
     
     {
@@ -659,7 +727,7 @@ sizes: ["36", "37", "38", "39", "40", "41"],
       category: "female",
 sizes: ["36", "37", "38", "39", "40", "41"],
 onSale: true,
-      originalPrice: 18000
+      originalPrice: 14800
     },
     {
       id: 40,
@@ -676,8 +744,133 @@ onSale: true,
   neeea_11
       ],
       category: "female",
-      sizes: ["36", "37", "38", "39", "40", "41"]
+      sizes: ["36", "37", "38", "39", "40", "41"],
+      onSale: true,
+      originalPrice: 14800
     },
+    {
+      id: 41,
+      name: "ATB Customized Belt",
+      price: 15000,
+      description: "Upgrade your style with The ATB premium, handcrafted customized belt. Made from high-quality materials, this belt combines durability and elegance, tailored to suit your unique taste. Personalize it with your initials, name, or a special design to make it truly one-of-a-kind. Perfect for everyday wear, formal occasions, or as a thoughtful gift",
+      images: [
+       belt
+      ],
+      category: "male",
+      sizes: ["36", "37", "38", "39", "40", "41"],
+      onSale: true,
+      originalPrice: 12000
+    },
+    {
+      id: 42,
+      name: "ATB Black ",
+      price: 13000,
+      description: "Step into comfort and elegance with our sleek black female slides. Designed with a minimalist style, these slides feature a soft, cushioned sole for all-day wear and a durable strap that ensures a secure fit. Perfect for casual outings, lounging, or pairing with your favorite summer outfits, they offer a chic and versatile addition to your footwear collection.",
+      images: [
+       fslide
+      ],
+      category: "female",
+      sizes: ["36", "37", "38", "39", "40", "41"],
+      onSale: true,
+      originalPrice: 10400
+    },
+    {
+      id: 43,
+      name: "ATB Black Adjustable Strap Slides",
+      price: 10000,
+      description: "Step out in style with these Black Adjustable Strap Slides! Designed for the modern woman, these slides feature a sleek black finish with durable straps and a chic buckle detail for a secure, adjustable fit. Perfect for casual outings or a relaxed day, they offer unmatched comfort and versatility. Pair them with your favorite outfit and elevate your everyday look effortlessly!",
+      images: [
+       bblack
+      ],
+      category: "female",
+      sizes: ["36", "37", "38", "39", "40", "41"],
+      onSale: true,
+      originalPrice: 8000
+    },
+    {
+      id: 44,
+      name: "ATB Black Chunky Sole Oxford Shoes",
+      price: 35000,
+      description: "Elevate your footwear collection with these Black Chunky Sole Oxford Shoes. Crafted with premium materials, they feature a modern chunky sole for added height and grip, making them both stylish and practical. The lace-up design and sleek black finish provide a timeless look that pairs effortlessly with formal or casual outfits. Perfect for making a bold statement while staying comfortable all day long!",
+      images: [
+      baki
+      ],
+      category: "unisex",
+      sizes: ["36", "37", "38", "39", "40", "41"],
+      onSale: true,
+      originalPrice: 28000
+    },
+    {
+      id: 45,
+      name: "ATB Black Leather Thong Sandals",
+      price: 15000,
+      description: "Step into effortless style with these sleek black leather thong sandals. Designed for both comfort and elegance, these sandals feature premium leather straps and a durable sole, making them perfect for casual outings or relaxed formal events. The minimalist design ensures they pair seamlessly with any outfit, offering a versatile addition to your footwear collection. Stay chic and comfortable all day ",
+      images: [
+      tho
+      ],
+      category: "female",
+      sizes: ["36", "37", "38", "39", "40", "41"],
+      onSale: true,
+      originalPrice: 12000
+    },
+    {
+      id: 46,
+      name: "ATB Black Suede Clogs ",
+      price: 20000,
+      description: "These black suede clogs are a stylish and versatile footwear option, designed for comfort and practicality. Featuring a smooth suede finish, a rounded toe, and metallic accent details, they exude understated elegance. The slip-on design ensures convenience, while the cushioned insole and durable sole provide excellent support and comfort for all-day wear. Perfect for casual outings or relaxing at home, these clogs are both functional and fashionable, making them a great addition to any wardrobe.",
+      images: [
+band_5
+      ],
+      category: "unisex",
+      sizes: ["36", "37", "38", "39", "40", "41"],
+      onSale : true,
+      originalPrice : 16000
+    },
+    {
+      id: 47,
+      name : "Atb Classic",
+      price : 35000,
+      description: "Experience effortless style with this ATB collection. Crafted from premium black leather, this handmade bespoke footwear by Adore The Brand (ATB) blends sleek design with supreme comfort, perfect for casual elegance.",
+      images: [shu],
+      category: "male",
+      sizes: ["36", "37", "38", "39", "40", "41"],
+      onSale: true,
+      originalPrice: 28000
+    },
+    {
+      id: 48,
+      name: "ATB Stylish Blue Slide",
+      price: 15000,
+      description: "Sophistication and timeless style. Handcrafted with care, this bespoke piece from Adore The Brand (ATB) offers exceptional comfort and versatility, making it the perfect addition to any wardrobe.",
+      images: [bluess],
+      category: "male",
+      sizes: ["36", "37", "38", "39", "40", "41"],
+      onSale: true,
+      originalPrice: 12000
+    },
+    // {
+    //   id: 49,
+    //   name: "",
+    //   price: null,
+    //   description: "",
+    //   images: [],
+    //   category: "female",
+    //   sizes: ["36", "37", "38", "39", "40", "41"],
+    //   onSale: true,
+    //   originalPrice: null
+    // },
+    // {
+    //   id: 50,
+    //   name: "",
+    //   price: null,
+    //   description: "",
+    //   images: [],
+    //   category: "female",
+    //   sizes: ["36", "37", "38", "39", "40", "41"],
+    //   onSale: true,
+    //   originalPrice: null
+    // },
+
     
   ];
   
