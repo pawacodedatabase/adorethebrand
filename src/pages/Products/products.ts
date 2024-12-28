@@ -375,7 +375,7 @@ import shu from './images/shuperu.jpg';
     {
       id: 18,
       name: "ATB Dual Comfort Sole",
-      price: 18500,
+      price: 19000,
       description: "The ATB Dual Comfort Sole offers a stylish, elevated look with its robust double sole design. Expertly handcrafted by Adore The Brand (ATB), these shoes combine durability and comfort, providing a unique and fashionable statement for any occasion.",
       images: [
         darkbs_3,
@@ -385,7 +385,7 @@ import shu from './images/shuperu.jpg';
       category: "male",
       sizes: ["39", "40", "41", "42", "43", "44", "45"],
       onSale: true,
-      originalPrice: 14800
+      originalPrice: 15200
     },
     {
       id: 19,
