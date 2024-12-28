@@ -361,7 +361,7 @@ import shu from './images/shuperu.jpg';
     {
       id: 17,
       name: "ATB Midnight Birkenstock",
-      price: 18500,
+      price: 19000,
       description: "The ATB Midnight Birkenstock combines the iconic Birkenstock design with a rich, dark finish for a stylish and comfortable look. Handcrafted with premium materials, this sandal by Adore The Brand (ATB) offers both durability and effortless elegance for all-day wear.",
       images: [
        darkbs_1,
@@ -370,12 +370,12 @@ import shu from './images/shuperu.jpg';
       category: "male",
       sizes: ["39", "40", "41", "42", "43", "44", "45"],
       onSale: true,
-      originalPrice: 14800
+      originalPrice: 15200
     },
     {
       id: 18,
       name: "ATB Dual Comfort Sole",
-      price: 18000,
+      price: 18500,
       description: "The ATB Dual Comfort Sole offers a stylish, elevated look with its robust double sole design. Expertly handcrafted by Adore The Brand (ATB), these shoes combine durability and comfort, providing a unique and fashionable statement for any occasion.",
       images: [
         darkbs_3,
@@ -385,12 +385,12 @@ import shu from './images/shuperu.jpg';
       category: "male",
       sizes: ["39", "40", "41", "42", "43", "44", "45"],
       onSale: true,
-      originalPrice: 14400
+      originalPrice: 14800
     },
     {
       id: 19,
       name: "ATB Azure Mules",
-      price: 20000,
+      price: 19000,
       description: "The ATB Azure Mules feature a rich blue hue that effortlessly blends style with comfort. Handcrafted with attention to detail, these mules by Adore The Brand (ATB) offer a sleek, modern look perfect for casual chic or dressed-up occasions.",
       images: [
         mules_1_1,
@@ -400,7 +400,7 @@ import shu from './images/shuperu.jpg';
       category: "male",
       sizes: ["39", "40", "41", "42", "43", "44", "45"],
       onSale: true,
-      originalPrice: 16000
+      originalPrice: 15200
     },
     {
       id: 20,
