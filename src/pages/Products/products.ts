@@ -281,7 +281,7 @@ import shu from './images/shuperu.jpg';
     {
       id: 11,
       name: "ATB Cocoa Luxe Slide",
-      price: 10000,
+      price: 13000,
       description: "Embrace chic simplicity with the ATB Cocoa Luxe Slide. Made from rich brown leather, this handcrafted piece by Adore The Brand (ATB) offers timeless elegance and all-day comfort for the modern woman.",
       images: [
        fm1 , fm2
@@ -289,7 +289,7 @@ import shu from './images/shuperu.jpg';
       category: "female",
       sizes: ["36", "37", "38", "39", "40", "41"],
       onSale: true,
-      originalPrice: 8000
+      originalPrice: 9600
     },
     {
       id: 12,
@@ -405,7 +405,7 @@ import shu from './images/shuperu.jpg';
     {
       id: 20,
       name: "ATB Platform",
-      price: 13000,
+      price: 15000,
       description: "Chic Platform for casual and formal settings.",
       images: [
         fmm_1,
@@ -414,7 +414,7 @@ import shu from './images/shuperu.jpg';
       category: "female",
       sizes: ["36", "37", "38", "39", "40", "41"],
       onSale: true,
-      originalPrice: 10400
+      originalPrice: 12000
     },
     {
       id: 21,
@@ -445,7 +445,7 @@ import shu from './images/shuperu.jpg';
     {
       id: 23,
       name: "ATB Cocoa Breeze Slide",
-      price: 10000,
+      price: 12000,
       description: "The ATB Cocoa Breeze Slide offers a perfect blend of elegance and comfort with its rich brown leather design. Handcrafted for the modern woman, this flat slide by Adore The Brand (ATB) provides effortless style and all-day wearability for casual chic occasions.",
       images: [
         slide
@@ -453,7 +453,7 @@ import shu from './images/shuperu.jpg';
       category: "female",
       sizes: ["36", "37", "38", "39", "40", "41"],
       onSale: true,
-      originalPrice: 8000
+      originalPrice: 9600
     },
     {
       id: 24,
@@ -472,7 +472,7 @@ import shu from './images/shuperu.jpg';
     {
       id: 25,
       name: "ATB chic slide",
-      price: 10000,
+      price: 12000,
       description: "Breeze Slide offers a perfect blend of elegance and comfort with its rich brown leather design. Handcrafted for the modern woman, this flat slide by Adore The Brand (ATB) provides effortless style and all-day wearability for casual chic occasions.",
       images: [
        femsli
@@ -480,7 +480,7 @@ import shu from './images/shuperu.jpg';
       category: "female",
       sizes: ["36", "37", "38", "39", "40", "41"],
       onSale: true,
-      originalPrice: 8000
+      originalPrice: 9600
     },
     {
       id: 26,
@@ -604,7 +604,7 @@ onSale: true,
     {
       id: 33,
       name: "ATB Simply Slips",
-      price: 10000,
+      price: 12000,
       description: "The ATB Simply Slips are the epitome of comfort and simplicity. Handcrafted with a minimalist design, these basic female slippers by Adore The Brand (ATB) offer a versatile, easy-to-wear option that pairs effortlessly with any casual look, perfect for everyday wear.",
       images: [
         seresm_1,
@@ -623,7 +623,7 @@ onSale: true,
 category: "female",
 sizes: ["36", "37", "38", "39", "40", "41"],
 onSale: true,
-      originalPrice: 8000
+      originalPrice: 9600
       
     },
     
@@ -697,7 +697,7 @@ onSale: true,
     {
       id: 38,
       name: "ATB Cocoa Breeze Slippers",
-      price: 10000,
+      price: 12000,
       description: "The ATB Cocoa Breeze Slippers offer a stylish yet comfortable design in rich brown, combining the elegance of slippers with a hint of sandal-inspired detail. Handcrafted by Adore The Brand (ATB), these versatile slippers are perfect for casual, everyday wear.",
       images: [
         mnaoa_1,
@@ -709,7 +709,7 @@ onSale: true,
 category: "female",
 sizes: ["36", "37", "38", "39", "40", "41"],
 onSale: true,
-      originalPrice: 8000
+      originalPrice: 9600
     },
     
     {
@@ -764,7 +764,7 @@ onSale: true,
     {
       id: 42,
       name: "ATB Black ",
-      price: 13000,
+      price: 15000,
       description: "Step into comfort and elegance with our sleek black female slides. Designed with a minimalist style, these slides feature a soft, cushioned sole for all-day wear and a durable strap that ensures a secure fit. Perfect for casual outings, lounging, or pairing with your favorite summer outfits, they offer a chic and versatile addition to your footwear collection.",
       images: [
        fslide
@@ -772,12 +772,12 @@ onSale: true,
       category: "female",
       sizes: ["36", "37", "38", "39", "40", "41"],
       onSale: true,
-      originalPrice: 10400
+      originalPrice: 12000
     },
     {
       id: 43,
       name: "ATB Leisure Slide",
-      price: 10000,
+      price: 12000,
       description: "Step out in style with these Black Adjustable Strap Slides! Designed for the modern woman, these slides feature a sleek black finish with durable straps and a chic buckle detail for a secure, adjustable fit. Perfect for casual outings or a relaxed day, they offer unmatched comfort and versatility. Pair them with your favorite outfit and elevate your everyday look effortlessly!",
       images: [
        bblack
@@ -785,7 +785,7 @@ onSale: true,
       category: "female",
       sizes: ["36", "37", "38", "39", "40", "41"],
       onSale: true,
-      originalPrice: 8000
+      originalPrice: 9600
     },
     {
       id: 44,
