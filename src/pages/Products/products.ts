@@ -268,7 +268,7 @@ import shu from './images/shuperu.jpg';
     {
       id: 5,
       name: "ATB Double Sole ",
-      price: 15000,
+      price: 19000,
       description: "Sophistication and timeless style. Handcrafted with care, this bespoke piece from Adore The Brand (ATB) offers exceptional comfort and versatility, making it the perfect addition to any wardrobe.",
       images: [
        onx
@@ -276,7 +276,7 @@ import shu from './images/shuperu.jpg';
       category: "male",
       sizes: ["39", "40", "41", "42", "43", "44", "45"],
       onSale: true,
-      originalPrice: 12000
+      originalPrice: 15200
     },
     {
       id: 11,
@@ -390,7 +390,7 @@ import shu from './images/shuperu.jpg';
     {
       id: 19,
       name: "ATB Azure Mules",
-      price: 19000,
+      price: 20000,
       description: "The ATB Azure Mules feature a rich blue hue that effortlessly blends style with comfort. Handcrafted with attention to detail, these mules by Adore The Brand (ATB) offer a sleek, modern look perfect for casual chic or dressed-up occasions.",
       images: [
         mules_1_1,
@@ -400,7 +400,7 @@ import shu from './images/shuperu.jpg';
       category: "male",
       sizes: ["39", "40", "41", "42", "43", "44", "45"],
       onSale: true,
-      originalPrice: 15200
+      originalPrice: 16000
     },
     {
       id: 20,
@@ -485,7 +485,7 @@ import shu from './images/shuperu.jpg';
     {
       id: 26,
       name: "ATB Dark slide",
-      price: 18500,
+      price: 19000,
       description: "The ATB Dark Breeze Sandal combines the comfort of a sandal with the sleekness of a dark pam design. Handcrafted with care, this versatile piece by Adore The Brand (ATB) offers a stylish and relaxed fit, perfect for casual outings or everyday wear.",
       images: [
         fineee_1,
@@ -502,7 +502,7 @@ import shu from './images/shuperu.jpg';
     {
       id: 27,
       name: "ATB Scarlet Slide",
-      price: 18500,
+      price: 19000,
       description: "The ATB Scarlet Slide features a rich red finish with elegant cross straps, offering a blend of luxury and comfort. Handcrafted with precision, this stylish slide by Adore The Brand (ATB) is perfect for casual outings, adding a bold pop of color to your footwear collection.",
       images: [
         Scarlet_1,
@@ -514,7 +514,7 @@ import shu from './images/shuperu.jpg';
 category: "female",
 sizes: ["36", "37", "38", "39", "40", "41"],
 onSale: true,
-      originalPrice: 14800
+      originalPrice: 15200
     },
     {
       id: 28,
@@ -584,7 +584,7 @@ onSale: true,
     {
       id: 32,
       name: "ATB Denim Chic Pam",
-      price: 18500,
+      price: 19000,
       description: "The ATB Denim Chic Pam offers a stylish, covered design crafted from premium denim. Handcrafted by Adore The Brand (ATB), this fashionable piece combines comfort with a modern edge, perfect for adding a touch of casual elegance to your wardrobe.",
       images: [
         denimgg_1,
@@ -599,7 +599,7 @@ onSale: true,
 category: "female",
 sizes: ["36", "37", "38", "39", "40", "41"],
 onSale: true,
-      originalPrice: 14800
+      originalPrice: 15200
     },
     {
       id: 33,
@@ -678,7 +678,7 @@ onSale: true,
     {
       id: 37,
       name: "Hermes inspired unisex pair",
-      price: 18500,
+      price: 19000,
       description: "The ATB Universal Slip is a versatile unisex design that combines comfort with sleek, minimalist style. Handcrafted by Adore The Brand (ATB), this timeless slip-on offers a perfect fit for any occasion, making it an essential piece for both men and women seeking effortless elegance.",
       images: [
         hermm_1,
@@ -691,7 +691,7 @@ onSale: true,
       category: "unisex",
       sizes: ["39", "40", "41", "42", "43", "44", "45"],
       onSale: true,
-      originalPrice: 14800
+      originalPrice: 15200
     },
     
     {
@@ -715,7 +715,7 @@ onSale: true,
     {
       id: 39,
       name: " ATB Chrome Luxe Slide",
-      price: 18500,
+      price: 19000,
       description: "The ATB Chrome Luxe Slide features a sleek white design with a chrome finish, offering a bold and modern look. Handcrafted by Adore The Brand (ATB), this stylish slide combines comfort and elegance, perfect for adding a touch of luxury to any casual outfit.",
       images: [
         neeea_1,
@@ -727,12 +727,12 @@ onSale: true,
       category: "female",
 sizes: ["36", "37", "38", "39", "40", "41"],
 onSale: true,
-      originalPrice: 14800
+      originalPrice: 15200
     },
     {
       id: 40,
       name: "ATB Amber Slide",
-      price: 18500,
+      price: 19000,
       description: "The ATB Amber Slide features a warm, brown leather design that combines casual comfort with stylish elegance. Handcrafted by Adore The Brand (ATB), this versatile slide is perfect for relaxed, everyday wear, offering both durability and a chic look.",
       images: [
         neeea_5,
@@ -746,7 +746,7 @@ onSale: true,
       category: "female",
       sizes: ["36", "37", "38", "39", "40", "41"],
       onSale: true,
-      originalPrice: 14800
+      originalPrice: 15200
     },
     {
       id: 41,
@@ -776,7 +776,7 @@ onSale: true,
     },
     {
       id: 43,
-      name: "ATB Black Adjustable Strap Slides",
+      name: "ATB Leisure Slide",
       price: 10000,
       description: "Step out in style with these Black Adjustable Strap Slides! Designed for the modern woman, these slides feature a sleek black finish with durable straps and a chic buckle detail for a secure, adjustable fit. Perfect for casual outings or a relaxed day, they offer unmatched comfort and versatility. Pair them with your favorite outfit and elevate your everyday look effortlessly!",
       images: [
