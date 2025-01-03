@@ -223,7 +223,7 @@ import shu from './images/shuperu.jpg';
     {
       id: 2,
       name: " ATB Noir Classic",
-      price: 35000,
+      price: 40000,
       description: "Step into elegance with the ATB Noir Classic, a handcrafted black covered shoe for the discerning gentleman. Designed by Adore The Brand (ATB), it combines timeless style with exceptional craftsmanship for unmatched sophistication.",
       images: [
         letwer_1,
@@ -234,12 +234,12 @@ import shu from './images/shuperu.jpg';
       category: "male",
       sizes: ["39", "40", "41", "42", "43", "44", "45"],
       onSale: true,
-      originalPrice: 28000
+      originalPrice: 32000
     },
     {
       id: 3,
       name: "ATB Midnight Loafers",
-      price: 35000,
+      price: 40000,
       description: "Bold and sleek, the ATB Midnight Loafers are a timeless black patent leather creation, combining elegance with modern design. Handcrafted by Adore The Brand (ATB), these loafers provide both comfort and style, perfect for any formal or casual occasion.",
       images: [
         midnight_1,
@@ -248,12 +248,12 @@ import shu from './images/shuperu.jpg';
       category: "male",
       sizes: ["39", "40", "41", "42", "43", "44", "45"],
       onSale: true,
-      originalPrice: 28000
+      originalPrice: 32000
     },
     {
       id: 4,
       name: "ATB Stylish Black Leather Shoes",
-      price: 35000,
+      price: 40000,
       description: "A refined black leather shoe that exudes sophistication and timeless style. Handcrafted with care, this bespoke piece from Adore The Brand (ATB) offers exceptional comfort and versatility, making it the perfect addition to any wardrobe.",
       images: [
         midnight_3,
@@ -263,7 +263,7 @@ import shu from './images/shuperu.jpg';
       category: "male",
       sizes: ["39", "40", "41", "42", "43", "44", "45"],
       onSale: true,
-      originalPrice: 28000
+      originalPrice: 32000
     },
     {
       id: 5,
@@ -519,7 +519,7 @@ onSale: true,
     {
       id: 28,
       name: "ATB Monochrome Step",
-      price: 35000,
+      price: 40000,
       description: "The ATB Monochrome Step combines sleek black and white design for a bold, modern look. Handcrafted with premium materials, this shoe by Adore The Brand (ATB) offers a stylish and versatile option, perfect for making a statement while ensuring comfort and durability.",
       images: [
         bandw_1,
@@ -531,7 +531,7 @@ onSale: true,
       category: "male",
       sizes: ["39", "40", "41", "42", "43", "44", "45"],
       onSale: true,
-      originalPrice: 28000
+      originalPrice: 32000
     },
     {
       id: 29,
@@ -790,7 +790,7 @@ onSale: true,
     {
       id: 44,
       name: "ATB Black Chunky Sole Oxford Shoes",
-      price: 35000,
+      price: 40000,
       description: "Elevate your footwear collection with these Black Chunky Sole Oxford Shoes. Crafted with premium materials, they feature a modern chunky sole for added height and grip, making them both stylish and practical. The lace-up design and sleek black finish provide a timeless look that pairs effortlessly with formal or casual outfits. Perfect for making a bold statement while staying comfortable all day long!",
       images: [
       baki
@@ -798,7 +798,7 @@ onSale: true,
       category: "unisex",
       sizes: ["36", "37", "38", "39", "40", "41"],
       onSale: true,
-      originalPrice: 28000
+      originalPrice: 32000
     },
     {
       id: 45,
@@ -829,13 +829,13 @@ band_5
     {
       id: 47,
       name : "Atb Classic",
-      price : 35000,
+      price : 40000,
       description: "Experience effortless style with this ATB collection. Crafted from premium black leather, this handmade bespoke footwear by Adore The Brand (ATB) blends sleek design with supreme comfort, perfect for casual elegance.",
       images: [shu],
       category: "male",
       sizes: ["36", "37", "38", "39", "40", "41"],
       onSale: true,
-      originalPrice: 28000
+      originalPrice: 32000
     },
     {
       id: 48,
