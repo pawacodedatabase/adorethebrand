@@ -92,7 +92,20 @@ const Footer: React.FC = () => {
           
           </Link>  
             
-              
+              {/* //advert */}
+        <div className="text-sm text-center mt-8 ">
+          <p className="text-gray-400">
+            website created by |{" "}
+            <a
+              href="https://instagram.com/pawacode"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-red-500"
+            >
+              @pawacode
+            </a>
+          </p>
+        </div>
            
           </div>
         </div>
