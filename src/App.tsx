@@ -17,6 +17,7 @@ import LegSizeGuide from "./pages/guide";
 import OnSaleProducts from "./components/onSale";
 import LegalTerms from "./components/homeComponents/LegalTerm";
 
+
 const App: React.FC = () => {
   const [cart, setCart] = useState<any[]>([]);
   const [wishlist, setWishlist] = useState<any[]>([]);
@@ -130,6 +131,7 @@ const App: React.FC = () => {
           <Route path="/guide" element={<LegSizeGuide />} /> 
         </Routes>
         <Footer />
+       
       </div>
     </Router>
   );

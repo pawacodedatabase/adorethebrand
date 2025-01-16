@@ -268,7 +268,7 @@ import shu from './images/shuperu.jpg';
     {
       id: 5,
       name: "ATB Double Sole ",
-      price: 19000,
+      price: 21000,
       description: "Sophistication and timeless style. Handcrafted with care, this bespoke piece from Adore The Brand (ATB) offers exceptional comfort and versatility, making it the perfect addition to any wardrobe.",
       images: [
        onx
@@ -276,12 +276,12 @@ import shu from './images/shuperu.jpg';
       category: "male",
       sizes: ["39", "40", "41", "42", "43", "44", "45"],
       onSale: true,
-      originalPrice: 15200
+      originalPrice: 16800
     },
     {
       id: 11,
       name: "ATB Cocoa Luxe Slide",
-      price: 13000,
+      price: 12000,
       description: "Embrace chic simplicity with the ATB Cocoa Luxe Slide. Made from rich brown leather, this handcrafted piece by Adore The Brand (ATB) offers timeless elegance and all-day comfort for the modern woman.",
       images: [
        fm1 , fm2
@@ -294,7 +294,7 @@ import shu from './images/shuperu.jpg';
     {
       id: 12,
       name: "ATB Terra Brown Sandals",
-      price: 19000,
+      price: 21000,
       description: "Step into comfort with the ATB Terra Brown Sandals. Featuring a durable brown sole and premium materials, these handcrafted sandals by Adore The Brand (ATB) combine style with support for an effortlessly chic look, perfect for casual outings.",
       images: [
         terrs_1 , terrs_2
@@ -302,12 +302,12 @@ import shu from './images/shuperu.jpg';
       category: "male" ,
       sizes: ["36", "37", "38", "39", "40", "41"],
       onSale: true,
-      originalPrice: 15200
+      originalPrice: 16800
     },
     {
       id: 13,
       name: "ATB Horizon Slide",
-      price: 19000,
+      price: 21000,
       description: "The ATB Horizon Slide blends elegance and comfort with its black sole, brown inner, and blue head design. Handcrafted by Adore The Brand (ATB), this stylish slide offers a contemporary look with a pop of color, perfect for relaxed yet fashionable outings.",
       images: [
        br
@@ -315,7 +315,7 @@ import shu from './images/shuperu.jpg';
       category: "male",
       sizes: ["39", "40", "41", "42", "43", "44", "45"],
       onSale: true,
-      originalPrice: 15200
+      originalPrice: 16800
     },
     {
       id: 14,
@@ -348,7 +348,7 @@ import shu from './images/shuperu.jpg';
     {
       id: 16,
       name: "ATB Shadow Step",
-      price: 20000,
+      price: 22000,
       description: "The ATB Shadow Step is a sleek black half shoe, offering a refined yet casual look. Handcrafted with precision, this versatile piece from Adore The Brand (ATB) combines comfort and style, making it the perfect choice for any occasion.",
       images: [
        cover_
@@ -356,12 +356,12 @@ import shu from './images/shuperu.jpg';
       category: "male",
       sizes: ["39", "40", "41", "42", "43", "44", "45"],
       onSale: true,
-      originalPrice: 16000
+      originalPrice: 17600
     },
     {
       id: 17,
       name: "ATB Midnight Birkenstock",
-      price: 19000,
+      price: 21000,
       description: "The ATB Midnight Birkenstock combines the iconic Birkenstock design with a rich, dark finish for a stylish and comfortable look. Handcrafted with premium materials, this sandal by Adore The Brand (ATB) offers both durability and effortless elegance for all-day wear.",
       images: [
        darkbs_1,
@@ -370,12 +370,12 @@ import shu from './images/shuperu.jpg';
       category: "male",
       sizes: ["39", "40", "41", "42", "43", "44", "45"],
       onSale: true,
-      originalPrice: 15200
+      originalPrice: 16800
     },
     {
       id: 18,
       name: "ATB Dual Comfort Sole",
-      price: 19000,
+      price: 21000,
       description: "The ATB Dual Comfort Sole offers a stylish, elevated look with its robust double sole design. Expertly handcrafted by Adore The Brand (ATB), these shoes combine durability and comfort, providing a unique and fashionable statement for any occasion.",
       images: [
         darkbs_3,
@@ -385,12 +385,12 @@ import shu from './images/shuperu.jpg';
       category: "male",
       sizes: ["39", "40", "41", "42", "43", "44", "45"],
       onSale: true,
-      originalPrice: 15200
+      originalPrice: 16800
     },
     {
       id: 19,
       name: "ATB Azure Mules",
-      price: 20000,
+      price: 22000,
       description: "The ATB Azure Mules feature a rich blue hue that effortlessly blends style with comfort. Handcrafted with attention to detail, these mules by Adore The Brand (ATB) offer a sleek, modern look perfect for casual chic or dressed-up occasions.",
       images: [
         mules_1_1,
@@ -400,7 +400,7 @@ import shu from './images/shuperu.jpg';
       category: "male",
       sizes: ["39", "40", "41", "42", "43", "44", "45"],
       onSale: true,
-      originalPrice: 16000
+      originalPrice: 17600
     },
     {
       id: 20,
@@ -419,7 +419,7 @@ import shu from './images/shuperu.jpg';
     {
       id: 21,
       name: "ATB Classic Flats",
-      price: 20000,
+      price: 22000,
       description: "The ATB Classic Flats feature a simple yet sophisticated design with a flat sole for ultimate comfort. Handcrafted with precision, these shoes by Adore The Brand (ATB) provide a timeless, versatile option for everyday wear, combining style and practicality.",
       images: [
         cooo
@@ -427,7 +427,7 @@ import shu from './images/shuperu.jpg';
       category: "male",
       sizes: ["39", "40", "41", "42", "43", "44", "45"],
       onSale: true,
-      originalPrice: 16000
+      originalPrice: 16800
     },
     {
       id: 22,
@@ -502,7 +502,7 @@ import shu from './images/shuperu.jpg';
     {
       id: 27,
       name: "ATB Scarlet Slide",
-      price: 19000,
+      price: 21000,
       description: "The ATB Scarlet Slide features a rich red finish with elegant cross straps, offering a blend of luxury and comfort. Handcrafted with precision, this stylish slide by Adore The Brand (ATB) is perfect for casual outings, adding a bold pop of color to your footwear collection.",
       images: [
         Scarlet_1,
@@ -514,7 +514,7 @@ import shu from './images/shuperu.jpg';
 category: "female",
 sizes: ["36", "37", "38", "39", "40", "41"],
 onSale: true,
-      originalPrice: 15200
+      originalPrice: 16800
     },
     {
       id: 28,
@@ -535,9 +535,9 @@ onSale: true,
     },
     {
       id: 29,
-      name: " ATB Crossweave Pam",
+      name: " ATB Leisure Slide",
       price: 15000,
-      description: "The ATB Crossweave Pam features a unique cross design that adds an elegant touch to a classic handmade pam. Crafted with attention to detail, this stylish piece by Adore The Brand (ATB) offers comfort and sophistication, perfect for both casual and chic occasions.",
+      description: "The ATB Leisure Slide features a unique cross design that adds an elegant touch to a classic handmade pam. Crafted with attention to detail, this stylish piece by Adore The Brand (ATB) offers comfort and sophistication, perfect for both casual and chic occasions.",
       images: [
         lacos_1,
         lacos_2,
@@ -553,7 +553,7 @@ onSale: true,
     {
       id: 30,
       name: "ATB Denim Cross Slide",
-      price:13000,
+      price:18000,
       description: "The ATB Denim Cross Slide combines the casual charm of denim with a unique cross strap design. Handcrafted by Adore The Brand (ATB), this stylish slide offers both comfort and a fresh, modern look, perfect for laid-back yet fashionable outings.",
       images: [
         denim_3,
@@ -563,7 +563,7 @@ onSale: true,
       category: "unisex",
       sizes: ["39", "40", "41", "42", "43", "44", "45"],
       onSale: true,
-      originalPrice: 10400
+      originalPrice: 14400
     },
     {
       id: 31,
@@ -583,8 +583,8 @@ onSale: true,
     },
     {
       id: 32,
-      name: "ATB Denim Chic Pam",
-      price: 19000,
+      name: "ATB denim “double sole”)",
+      price: 21000,
       description: "The ATB Denim Chic Pam offers a stylish, covered design crafted from premium denim. Handcrafted by Adore The Brand (ATB), this fashionable piece combines comfort with a modern edge, perfect for adding a touch of casual elegance to your wardrobe.",
       images: [
         denimgg_1,
@@ -599,7 +599,7 @@ onSale: true,
 category: "female",
 sizes: ["36", "37", "38", "39", "40", "41"],
 onSale: true,
-      originalPrice: 15200
+      originalPrice: 16800
     },
     {
       id: 33,
@@ -629,7 +629,7 @@ onSale: true,
     
     {
       id: 34,
-      name: "ATB Essential Loafers",
+      name: "ATB Cross Leisure Slide",
       price: 15000 ,
       description: "The ATB Essential Loafers are a classic, no-fuss design crafted for the modern man. Handcrafted with quality materials, these basic loafers by Adore The Brand (ATB) offer unmatched comfort and timeless style, making them a staple for any casual or semi-formal occasion.",
       images: [
@@ -646,8 +646,8 @@ onSale: true,
     
     {
       id: 35,
-      name: "Cross Pam",
-      price: 15000,
+      name: "ATB velvety- leather leisure slides",
+      price: 18000,
       description: "The ATB Essential Loafers are a classic, no-fuss design crafted for the modern man. Handcrafted with quality materials, these basic loafers by Adore The Brand (ATB) offer unmatched comfort and timeless style, making them a staple for any casual or semi-formal occasion..",
       images: [
         blasms_4,
@@ -715,7 +715,7 @@ onSale: true,
     {
       id: 39,
       name: " ATB Chrome Luxe Slide",
-      price: 19000,
+      price: 21000,
       description: "The ATB Chrome Luxe Slide features a sleek white design with a chrome finish, offering a bold and modern look. Handcrafted by Adore The Brand (ATB), this stylish slide combines comfort and elegance, perfect for adding a touch of luxury to any casual outfit.",
       images: [
         neeea_1,
@@ -727,12 +727,12 @@ onSale: true,
       category: "female",
 sizes: ["36", "37", "38", "39", "40", "41"],
 onSale: true,
-      originalPrice: 15200
+      originalPrice: 16800
     },
     {
       id: 40,
       name: "ATB Amber Slide",
-      price: 19000,
+      price: 21000,
       description: "The ATB Amber Slide features a warm, brown leather design that combines casual comfort with stylish elegance. Handcrafted by Adore The Brand (ATB), this versatile slide is perfect for relaxed, everyday wear, offering both durability and a chic look.",
       images: [
         neeea_5,
@@ -746,7 +746,7 @@ onSale: true,
       category: "female",
       sizes: ["36", "37", "38", "39", "40", "41"],
       onSale: true,
-      originalPrice: 15200
+      originalPrice: 16800
     },
     {
       id: 41,
@@ -764,7 +764,7 @@ onSale: true,
     {
       id: 42,
       name: "ATB Black ",
-      price: 15000,
+      price: 18000,
       description: "Step into comfort and elegance with our sleek black female slides. Designed with a minimalist style, these slides feature a soft, cushioned sole for all-day wear and a durable strap that ensures a secure fit. Perfect for casual outings, lounging, or pairing with your favorite summer outfits, they offer a chic and versatile addition to your footwear collection.",
       images: [
        fslide
@@ -772,7 +772,7 @@ onSale: true,
       category: "female",
       sizes: ["36", "37", "38", "39", "40", "41"],
       onSale: true,
-      originalPrice: 12000
+      originalPrice: 14400
     },
     {
       id: 43,
