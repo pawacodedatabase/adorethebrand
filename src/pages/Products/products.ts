@@ -218,7 +218,7 @@ import shu from './images/shuperu.jpg';
       category: "male",
       sizes: ["40", "39", "44", "42", "45" ],
       onSale: true,
-      originalPrice: 12000
+      // originalPrice: 12000
     },
     {
       id: 2,
@@ -234,7 +234,7 @@ import shu from './images/shuperu.jpg';
       category: "male",
       sizes: ["39", "40", "41", "42", "43", "44", "45"],
       onSale: true,
-      originalPrice: 32000
+      
     },
     {
       id: 3,
@@ -248,7 +248,7 @@ import shu from './images/shuperu.jpg';
       category: "male",
       sizes: ["39", "40", "41", "42", "43", "44", "45"],
       onSale: true,
-      originalPrice: 32000
+     
     },
     {
       id: 4,
@@ -276,7 +276,7 @@ import shu from './images/shuperu.jpg';
       category: "male",
       sizes: ["39", "40", "41", "42", "43", "44", "45"],
       onSale: true,
-      originalPrice: 16800
+      // originalPrice: 16800
     },
     {
       id: 11,
@@ -289,7 +289,7 @@ import shu from './images/shuperu.jpg';
       category: "female",
       sizes: ["36", "37", "38", "39", "40", "41"],
       onSale: true,
-      originalPrice: 9600
+      // originalPrice: 9600
     },
     {
       id: 12,
@@ -302,7 +302,7 @@ import shu from './images/shuperu.jpg';
       category: "male" ,
       sizes: ["36", "37", "38", "39", "40", "41"],
       onSale: true,
-      originalPrice: 16800
+      // originalPrice: 16800
     },
     {
       id: 13,
@@ -315,7 +315,7 @@ import shu from './images/shuperu.jpg';
       category: "male",
       sizes: ["39", "40", "41", "42", "43", "44", "45"],
       onSale: true,
-      originalPrice: 16800
+      // originalPrice: 16800
     },
     {
       id: 14,
@@ -328,7 +328,7 @@ import shu from './images/shuperu.jpg';
       category: "male",
       sizes: ["39", "40", "41", "42", "43", "44", "45"],
       onSale: true,
-      originalPrice: 16800
+      // originalPrice: 16800
     },
     {
       id: 15,
@@ -356,7 +356,7 @@ import shu from './images/shuperu.jpg';
       category: "male",
       sizes: ["39", "40", "41", "42", "43", "44", "45"],
       onSale: true,
-      originalPrice: 17600
+      // originalPrice: 17600
     },
     {
       id: 17,
@@ -370,7 +370,7 @@ import shu from './images/shuperu.jpg';
       category: "male",
       sizes: ["39", "40", "41", "42", "43", "44", "45"],
       onSale: true,
-      originalPrice: 16800
+      // originalPrice: 16800
     },
     {
       id: 18,
@@ -385,7 +385,7 @@ import shu from './images/shuperu.jpg';
       category: "male",
       sizes: ["39", "40", "41", "42", "43", "44", "45"],
       onSale: true,
-      originalPrice: 16800
+      // originalPrice: 16800
     },
     {
       id: 19,
@@ -400,7 +400,7 @@ import shu from './images/shuperu.jpg';
       category: "male",
       sizes: ["39", "40", "41", "42", "43", "44", "45"],
       onSale: true,
-      originalPrice: 17600
+      // originalPrice: 17600
     },
     {
       id: 20,
@@ -414,7 +414,7 @@ import shu from './images/shuperu.jpg';
       category: "female",
       sizes: ["36", "37", "38", "39", "40", "41"],
       onSale: true,
-      originalPrice: 14400
+      // originalPrice: 14400
     },
     {
       id: 21,
@@ -427,7 +427,7 @@ import shu from './images/shuperu.jpg';
       category: "male",
       sizes: ["39", "40", "41", "42", "43", "44", "45"],
       onSale: true,
-      originalPrice: 16800
+      // originalPrice: 16800
     },
     {
       id: 22,
@@ -440,7 +440,7 @@ import shu from './images/shuperu.jpg';
       category: "unisex",
       sizes: ["Pocket"],
       onSale: true,
-      originalPrice: 10400
+      // originalPrice: 10400
     },
     {
       id: 23,
@@ -453,7 +453,7 @@ import shu from './images/shuperu.jpg';
       category: "female",
       sizes: ["36", "37", "38", "39", "40", "41"],
       onSale: true,
-      originalPrice: 9600
+      // originalPrice: 9600
     },
     {
       id: 24,
@@ -467,7 +467,7 @@ import shu from './images/shuperu.jpg';
       category: "male",
       sizes: ["39", "40", "41", "42", "43", "44", "45"],
       onSale: true,
-      originalPrice: 12000
+      // originalPrice: 12000
     },
     {
       id: 25,
@@ -480,7 +480,7 @@ import shu from './images/shuperu.jpg';
       category: "female",
       sizes: ["36", "37", "38", "39", "40", "41"],
       onSale: true,
-      originalPrice: 9600
+      // originalPrice: 9600
     },
     {
       id: 26,
@@ -497,7 +497,7 @@ import shu from './images/shuperu.jpg';
       category: "unisex",
       sizes: ["36", "37", "38", "39", "40", "41"],
       onSale: true,
-      originalPrice: 16800
+      // originalPrice: 16800
     },
     {
       id: 27,
@@ -514,7 +514,7 @@ import shu from './images/shuperu.jpg';
 category: "female",
 sizes: ["36", "37", "38", "39", "40", "41"],
 onSale: true,
-      originalPrice: 16800
+      // originalPrice: 16800
     },
     {
       id: 28,
@@ -531,7 +531,7 @@ onSale: true,
       category: "male",
       sizes: ["39", "40", "41", "42", "43", "44", "45"],
       onSale: true,
-      originalPrice: 32000
+      // originalPrice: 32000
     },
     {
       id: 29,
@@ -548,7 +548,7 @@ onSale: true,
       category: "male",
       sizes: ["39", "40", "41", "42", "43", "44", "45"],
       onSale: true,
-      originalPrice: 12000
+      // originalPrice: 12000
     },
     {
       id: 30,
@@ -563,7 +563,7 @@ onSale: true,
       category: "unisex",
       sizes: ["39", "40", "41", "42", "43", "44", "45"],
       onSale: true,
-      originalPrice: 14400
+      // originalPrice: 14400
     },
     {
       id: 31,
@@ -579,7 +579,7 @@ onSale: true,
       category: "male",
       sizes: ["39", "40", "41", "42", "43", "44", "45"],
       onSale: true,
-      originalPrice: 12000
+      // originalPrice: 12000
     },
     {
       id: 32,
@@ -599,7 +599,7 @@ onSale: true,
 category: "female",
 sizes: ["36", "37", "38", "39", "40", "41"],
 onSale: true,
-      originalPrice: 16800
+      // originalPrice: 16800
     },
     {
       id: 33,
@@ -623,7 +623,7 @@ onSale: true,
 category: "female",
 sizes: ["36", "37", "38", "39", "40", "41"],
 onSale: true,
-      originalPrice: 9600
+      // originalPrice: 9600
       
     },
     
@@ -641,7 +641,7 @@ onSale: true,
       category: "male",
       sizes: ["39", "40", "41", "42", "43", "44", "45"],
       onSale: true,
-      originalPrice: 12000
+      // originalPrice: 12000
     },
     
     {
@@ -657,7 +657,7 @@ onSale: true,
       category: "male",
       sizes: ["39", "40", "41", "42", "43", "44", "45"],
       onSale: true,
-      originalPrice: 12000
+      // originalPrice: 12000
     },
     
     {
@@ -672,7 +672,7 @@ onSale: true,
       category: "male",
       sizes: ["39", "40", "41", "42", "43", "44", "45"],
       onSale: true,
-      originalPrice: 12000
+      // originalPrice: 12000
     },
     
     {
@@ -691,7 +691,7 @@ onSale: true,
       category: "unisex",
       sizes: ["39", "40", "41", "42", "43", "44", "45"],
       onSale: true,
-      originalPrice: 16800
+      // originalPrice: 16800
     },
     
     {
@@ -709,7 +709,7 @@ onSale: true,
 category: "female",
 sizes: ["36", "37", "38", "39", "40", "41"],
 onSale: true,
-      originalPrice: 9600
+      // originalPrice: 9600
     },
     
     {
@@ -727,7 +727,7 @@ onSale: true,
       category: "female",
 sizes: ["36", "37", "38", "39", "40", "41"],
 onSale: true,
-      originalPrice: 16800
+      // originalPrice: 16800
     },
     {
       id: 40,
@@ -746,7 +746,7 @@ onSale: true,
       category: "female",
       sizes: ["36", "37", "38", "39", "40", "41"],
       onSale: true,
-      originalPrice: 16800
+      // originalPrice: 16800
     },
     {
       id: 41,
@@ -759,7 +759,7 @@ onSale: true,
       category: "male",
       sizes: ["36", "37", "38", "39", "40", "41"],
       onSale: true,
-      originalPrice: 12000
+      // originalPrice: 12000
     },
     {
       id: 42,
@@ -772,7 +772,7 @@ onSale: true,
       category: "female",
       sizes: ["36", "37", "38", "39", "40", "41"],
       onSale: true,
-      originalPrice: 14400
+      // originalPrice: 14400
     },
     {
       id: 43,
@@ -785,7 +785,7 @@ onSale: true,
       category: "female",
       sizes: ["36", "37", "38", "39", "40", "41"],
       onSale: true,
-      originalPrice: 9600
+      // originalPrice: 9600
     },
     {
       id: 44,
@@ -798,7 +798,7 @@ onSale: true,
       category: "unisex",
       sizes: ["36", "37", "38", "39", "40", "41"],
       onSale: true,
-      originalPrice: 32000
+      // originalPrice: 32000
     },
     {
       id: 45,
@@ -811,7 +811,7 @@ onSale: true,
       category: "female",
       sizes: ["36", "37", "38", "39", "40", "41"],
       onSale: true,
-      originalPrice: 12000
+      // originalPrice: 12000
     },
     {
       id: 46,
@@ -824,7 +824,7 @@ band_5
       category: "unisex",
       sizes: ["36", "37", "38", "39", "40", "41"],
       onSale : true,
-      originalPrice : 17600
+      // originalPrice : 17600
     },
     {
       id: 47,
@@ -835,7 +835,7 @@ band_5
       category: "male",
       sizes: ["36", "37", "38", "39", "40", "41"],
       onSale: true,
-      originalPrice: 32000
+      // originalPrice: 32000
     },
     {
       id: 48,
@@ -846,7 +846,7 @@ band_5
       category: "male",
       sizes: ["36", "37", "38", "39", "40", "41"],
       onSale: true,
-      originalPrice: 12000
+      // originalPrice: 12000
     },
     // {
     //   id: 49,

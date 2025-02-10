@@ -149,9 +149,9 @@ const ProductList: React.FC<{
                 <p className="text-sm text-gray-500">{product.description}</p>
                 <div className="flex items-baseline space-x-2">
                   <p className="text-2xl font-semibold text-red-600">₦{mainPrice}</p>
-                  {product.originalPrice && (
+                  {product.price && (
                     <p className="text-xl text-gray-400 line-through">
-                      ₦{product.price}
+                      {product.originalPrice}
                     </p>
                   )}
                 </div>
