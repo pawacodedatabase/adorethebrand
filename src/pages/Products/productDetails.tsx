@@ -95,7 +95,7 @@ const ProductDetail: React.FC = () => {
             <h2 className="text-3xl font-thin text-gray-900">{product.name}</h2>
             <p className="text-xl text-red-600 ">₦{product.price}</p>
 
-            <p className="text-sm text-center ">We are offering a  <span className="font-bold text-gray-500">20% discount, </span> so the price you will be paying is  <span className=" text-red-600">₦{product.originalPrice}</span></p>
+            {/* <p className="text-sm text-center ">We are offering a  <span className="font-bold text-gray-500">20% discount, </span> so the price you will be paying is  <span className=" text-red-600">₦{product.originalPrice}</span></p> */}
            
             <p className="text-sm text-gray-500 mb-4">{product.category}</p>
 
