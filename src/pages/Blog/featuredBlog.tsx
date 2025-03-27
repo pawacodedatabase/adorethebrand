@@ -81,7 +81,7 @@ const FeaturedBlog: React.FC = () => {
               <div className="flex justify-between">
                  <p className="text-xs mt-2">
                 Author: <span className="font-bold">{blog.author || "Unknown"} </span>
-              </p> <p className="text-xs">at {blog.date}</p>
+              </p> <p className="text-xs mt-2">at {blog.date}</p>
               </div>
              
             </div>

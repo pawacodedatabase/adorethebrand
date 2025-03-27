@@ -3,7 +3,7 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import logo from "../../assets/logo.png";
 import { FaArrowAltCircleRight } from "react-icons/fa";
-import BlogBanner from "./blogBanner";
+// import BlogBanner from "./blogBanner";
 
 const JSON_BIN_ID = "67e50b3c8a456b79667d8780"; // Replace with your JSONBin bin ID
 const API_KEY = "$2a$10$M/z2e.cKX1SUsOT62D4pk.gbhiuJhRx0u3VzNAe.DsTPIHHAQE6Zu"; // Replace with your JSONBin API Key
@@ -72,9 +72,11 @@ const Blog: React.FC = () => {
                     Read More
                   </Link>
                 </p>
-                <p className="text-[12px] mt-2">
-                  Author <span className="font-bold">{blog.author} at {blog.date}</span>
-                </p>
+                <div className="flex justify-between">
+                 <p className="text-xs mt-2">
+                Author: <span className="font-bold">{blog.author || "Unknown"} </span>
+              </p> <p className="text-xs mt-2">at {blog.date}</p>
+              </div>
               </div>
             ))}
           </div>
