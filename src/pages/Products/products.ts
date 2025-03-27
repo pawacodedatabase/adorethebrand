@@ -67,7 +67,29 @@ import belt2 from './images/brk_2.jpg';
   import eleganza_4 from './images/eleganza_4.jpg';
   
 
+  import slliiibb_1 from './images/slliiibb_1.jpg';
+import slliiibb_2 from './images/slliiibb_2.jpg';
+import slliiibb_3 from './images/slliiibb_3.jpg';
+import slliiibb_4 from './images/slliiibb_4.jpg';
+import slliiibb_5 from './images/slliiibb_5.jpg';
+import slliiibb_6 from './images/slliiibb_6.jpg';
+import slliiibb_7 from './images/slliiibb_7.jpg';
+import slliiibb_8 from './images/slliiibb_8.jpg';
+import slliiibb_9 from './images/slliiibb_9.jpg';
+import slliiibb_10 from './images/slliiibb_10.jpg';
+import slliiibb_11 from './images/slliiibb_11.jpg';
+import slliiibb_12 from './images/slliiibb_12.jpg';
 
+
+  import fxxckk_1 from './images/fxxckk_1.jpg';
+  import fxxckk_2 from './images/fxxckk_2.jpg';
+  import fxxckk_3 from './images/fxxckk_3.jpg';
+  import fxxckk_4 from './images/fxxckk_4.jpg';
+  import fxxckk_5 from './images/fxxckk_5.jpg';
+  import fxxckk_6 from './images/fxxckk_6.jpg';
+  import fxxckk_7 from './images/fxxckk_7.jpg';
+  import fxxckk_8 from './images/fxxckk_8.jpg';
+  // import fxxckk_9 from './images/fxxckk_';
 
   import mall_1 from './images/mall_1.jpg';
 import mall_2 from './images/mall_2.jpg';
@@ -913,61 +935,62 @@ band_5
       // onSale: true,
       // originalPrice: null
     },
-    // {
-    //   id: 50,
-    //   name: "",
-    //   price: null,
-    //   description: "",
-    //   images: [],
-    //   category: "female",
-    //   sizes: ["36", "37", "38", "39", "40", "41"],
-    //   onSale: true,
-    //   originalPrice: null
-    // },
-    // {
-    //   id: 50,
-    //   name: "",
-    //   price: null,
-    //   description: "",
-    //   images: [],
-    //   category: "female",
-    //   sizes: ["36", "37", "38", "39", "40", "41"],
-    //   onSale: true,
-    //   originalPrice: null
-    // },
-    // {
-    //   id: 50,
-    //   name: "",
-    //   price: null,
-    //   description: "",
-    //   images: [],
-    //   category: "female",
-    //   sizes: ["36", "37", "38", "39", "40", "41"],
-    //   onSale: true,
-    //   originalPrice: null
-    // },
-    // {
-    //   id: 50,
-    //   name: "",
-    //   price: null,
-    //   description: "",
-    //   images: [],
-    //   category: "female",
-    //   sizes: ["36", "37", "38", "39", "40", "41"],
-    //   onSale: true,
-    //   originalPrice: null
-    // },
-    // {
-    //   id: 50,
-    //   name: "",
-    //   price: null,
-    //   description: "",
-    //   images: [],
-    //   category: "female",
-    //   sizes: ["36", "37", "38", "39", "40", "41"],
-    //   onSale: true,
-    //   originalPrice: null
-    // },
+    {
+      id: 53,
+      name: "ATB Verdant weave",
+      price: 18000,
+      description: "Sophistication and timeless style. Handcrafted with care, this bespoke piece from Adore The Brand (ATB) offers exceptional comfort and versatility, making it the perfect addition to any wardrobe.",
+      images: [fxxckk_1, fxxckk_2, fxxckk_3,],
+      category: "unisex",
+      sizes: ["36", "37", "38", "39", "40", "41"],
+      // onSale: true,
+      // originalPrice: null
+    },
+    {
+      id: 54,
+      name: "ATB Jade",
+      price: 12000,
+      description: "Sophistication and timeless style. Handcrafted with care, this bespoke piece from Adore The Brand (ATB) offers exceptional comfort and versatility, making it the perfect addition to any wardrobe.",
+      images: [ fxxckk_4, fxxckk_5, fxxckk_6, fxxckk_7, fxxckk_8, ],
+      category: "female",
+      sizes: ["36", "37", "38", "39", "40", "41"],
+      // onSale: true,
+      // originalPrice: null
+    },
+    {
+      id: 55,
+      name: "ATB Rustic flow",
+      price: 15000,
+      description: "Sophistication and timeless style. Handcrafted with care, this bespoke piece from Adore The Brand (ATB) offers exceptional comfort and versatility, making it the perfect addition to any wardrobe.",
+      images: [slliiibb_1, slliiibb_2, slliiibb_3, slliiibb_4],
+      category: "male",
+      sizes: ["36", "37", "38", "39", "40", "41"],
+      // onSale: true,
+      // originalPrice: null
+    },
+    {
+      id: 56,
+      name: "ATB stardust glide.",
+      price: 12000,
+      description: "Sophistication and timeless style. Handcrafted with care, this bespoke piece from Adore The Brand (ATB) offers exceptional comfort and versatility, making it the perfect addition to any wardrobe.",
+      images: [slliiibb_5, slliiibb_6,
+        slliiibb_7],
+      category: "female",
+      sizes: ["36", "37", "38", "39", "40", "41"],
+      // onSale: true,
+      // originalPrice: null
+    },
+    {
+      id: 57,
+      name: "ATB Luxe",
+      price: 21000,
+      description: "",
+      images: [slliiibb_8, slliiibb_9, slliiibb_10, slliiibb_11, slliiibb_12],
+      category: "female",
+      sizes: ["36", "37", "38", "39", "40", "41"],
+      // onSale: true,
+      // originalPrice: null
+    },
     // {
     //   id: 50,
     //   name: "",

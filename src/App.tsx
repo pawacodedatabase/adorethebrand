@@ -16,6 +16,9 @@ import Wishlist from "./pages/Products/wishlist";
 import LegSizeGuide from "./pages/guide";
 import OnSaleProducts from "./components/onSale";
 import LegalTerms from "./components/homeComponents/LegalTerm";
+import AdminBlog from "./pages/Blog/adminBlog";
+import Blog from "./pages/Blog/blog";
+import BlogDetail from "./pages/Blog/blogDetails";
 
 
 const App: React.FC = () => {
@@ -129,6 +132,9 @@ const App: React.FC = () => {
           <Route path="/checkout" element={<Checkout cart={cart} />} />
           <Route path="/products/:category" element={<ProductListPage />} />
           <Route path="/guide" element={<LegSizeGuide />} /> 
+          <Route path="/admin" element={<AdminBlog />} /> 
+          <Route path="/blog" element={<Blog />} /> 
+          <Route path="/blog/:id" element={<BlogDetail />} /> 
         </Routes>
         <Footer />
        
