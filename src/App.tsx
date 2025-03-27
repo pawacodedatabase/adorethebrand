@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { HashRouter as Router, Routes, Route } from "react-router-dom";
+import { HashRouter as Router, Routes, Route, Link } from "react-router-dom";
 import Home from "./pages/home";
 import Cart from "./pages/shoppingCart";
 import Checkout from "./pages/checkOut";
@@ -19,6 +19,11 @@ import LegalTerms from "./components/homeComponents/LegalTerm";
 import AdminBlog from "./pages/Blog/adminBlog";
 import Blog from "./pages/Blog/blog";
 import BlogDetail from "./pages/Blog/blogDetails";
+import Admin from "./pages/Backend/shopadmin";
+
+import Shop from "./pages/Backend/shop";
+import ShopDetails from "./pages/Backend/shopdetails";
+import { FaWhatsapp } from "react-icons/fa";
 
 
 const App: React.FC = () => {
@@ -98,9 +103,19 @@ const App: React.FC = () => {
   };
 
   return (
+    <>
     <Router>
       <ScrollToTop /> {/* Add ScrollToTop here */}
       <MovingText />
+      <Link
+  to={`https://wa.me/+2349086471660`}
+  target="_blank"
+  rel="noopener noreferrer"
+  className="fixed bottom-6 right-6 flex items-center gap-2 bg-black text-white py-3 px-5 rounded-full shadow-lg hover:border-2 hover:border-black hover:bg-white hover:text-black transition duration-300 z-[1000000000]"
+>
+  <FaWhatsapp size={14} />
+  <span className="text-[10px] font-semibold">Contact Us</span>
+</Link>
       <Header />
       <div className="font-sans">
         <Routes>
@@ -133,13 +148,19 @@ const App: React.FC = () => {
           <Route path="/products/:category" element={<ProductListPage />} />
           <Route path="/guide" element={<LegSizeGuide />} /> 
           <Route path="/admin" element={<AdminBlog />} /> 
+          <Route path="/shop" element={<Shop />} /> 
+          <Route path="/shop/:id" element={<ShopDetails />} /> 
+          <Route path="/shopadmin" element={<Admin />} /> 
           <Route path="/blog" element={<Blog />} /> 
           <Route path="/blog/:id" element={<BlogDetail />} /> 
+          
+
         </Routes>
         <Footer />
        
       </div>
     </Router>
+   </>
   );
 };
 

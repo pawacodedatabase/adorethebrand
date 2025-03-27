@@ -58,6 +58,8 @@ const Blog: React.FC = () => {
         ) : blogs.length === 0 ? (
           <p className="text-gray-500 text-center">No blogs available.</p>
         ) : (
+          <>
+          
           <div className="space-y-6">
             {blogs.map((blog) => (
               <div key={blog.id} className="border p-4 rounded bg-gray-100">
@@ -79,7 +81,7 @@ const Blog: React.FC = () => {
               </div>
               </div>
             ))}
-          </div>
+          </div></>
         )}
       </div>
     </>

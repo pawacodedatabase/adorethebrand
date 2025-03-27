@@ -66,8 +66,11 @@ const FeaturedBlog: React.FC = () => {
       ) : (
         <div className="grid gap-6">
           {featuredBlogs.map((blog) => (
+            
             <div key={blog.id} className="border p-4 rounded bg-gray-100">
-              <img src={logo} alt="Blog Logo" className="w-24 mx-auto mb-3" />
+             <Link to={`/blog/${blog.id}`}>
+             
+             <img src={logo} alt="Blog Logo" className="w-24 mx-auto mb-3" />
               <h4 className="text-xl font-bold flex items-center gap-2">
                 <FaArrowAltCircleRight className="text-red-500" />
                 {blog.title}
@@ -78,6 +81,7 @@ const FeaturedBlog: React.FC = () => {
                   Read More
                 </Link>
               </p>
+              </Link> 
               <div className="flex justify-between">
                  <p className="text-xs mt-2">
                 Author: <span className="font-bold">{blog.author || "Unknown"} </span>
