@@ -40,7 +40,7 @@ const Blog: React.FC = () => {
 
   return (
     <>
-    <BlogBanner/>
+    {/* <BlogBanner/> */}
       <div className="max-w-4xl mx-auto p-6 bg-white shadow-lg rounded-lg">
         <h2 className="text-3xl font-semibold text-center mb-4">Blog</h2>
 
