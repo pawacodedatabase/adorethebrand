@@ -67,6 +67,9 @@ const ShopDetails: React.FC = () => {
   return (
     <>
     <div className="max-w-2xl mx-auto p-6 bg-white">
+    <div className="space-y-4 mb-8"> <p className="font-thin text-gray-800 text-center">How to Order This Product</p> <p className="text-gray-500 text-center p-3"> This product cannot be added to your cart or wishlist. To make a purchase, please click the WhatsApp button below to proceed with your order. Our bespoke shoes are crafted with premium materials for ultimate comfort and style, ensuring a perfect fit for every occasion. </p> </div>
+
+
       {/* Main Image Display */}
       <img
         src={selectedImage}

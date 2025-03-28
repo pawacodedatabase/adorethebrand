@@ -6,6 +6,8 @@ const JSON_BIN_ID = "67e547978561e97a50f3f013"; // Replace with your JSONBin ID
 const API_KEY = "$2a$10$M/z2e.cKX1SUsOT62D4pk.gbhiuJhRx0u3VzNAe.DsTPIHHAQE6Zu"; // Replace with your JSONBin API Key
 const BASE_URL = `https://api.jsonbin.io/v3/b/${JSON_BIN_ID}`;
 
+const EXCHANGE_RATE = 0.0013; // Example rate: 1 NGN = 0.0013 USD
+
 interface Product {
   id: number;
   name: string;
@@ -21,16 +23,19 @@ interface Product {
 const Shop: React.FC = () => {
   const [products, setProducts] = useState<Product[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
+  const [currency, setCurrency] = useState<"NGN" | "USD">("NGN");
 
   useEffect(() => {
     const fetchProducts = async () => {
       try {
         const response = await axios.get(BASE_URL, {
           headers: { "X-Master-Key": API_KEY },
+          
         });
         setProducts(response.data.record.products || []);
       } catch (error) {
         console.error("Error fetching products:", error);
+        console.log(setCurrency)
       } finally {
         setLoading(false);
       }
@@ -39,15 +44,28 @@ const Shop: React.FC = () => {
     fetchProducts();
   }, []);
 
+  const convertPrice = (price: number) => {
+    return currency === "USD" ? price * EXCHANGE_RATE : price;
+  };
+
   return (
     <div className="max-w-4xl mx-auto p-6 bg-white shadow-lg rounded-lg">
       <h2 className="text-3xl font-semibold text-center mb-4">More Products</h2>
       <p className="text-sm text-center mb-3 animate-bounce">
-  You can't add these products to cart just order directly
-</p>
+        You can't add these products to cart, just order directly
+      </p>
+
+      {/* Currency Switch Button */}
+      {/* <div className="flex justify-end mb-4">
+        <button
+          onClick={() => setCurrency(currency === "NGN" ? "USD" : "NGN")}
+          className="px-4 py-2 bg-black text-white rounded"
+        >
+          Switch to {currency === "NGN" ? "USD" : "NGN"}
+        </button>
+      </div> */}
 
       {loading ? (
-        // Skeleton Loader
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
           {Array(4)
             .fill(null)
@@ -75,7 +93,6 @@ const Shop: React.FC = () => {
                 </span>
               )}
 
-              
               <img
                 src={product.images[0]}
                 alt={product.name}
@@ -87,11 +104,12 @@ const Shop: React.FC = () => {
               </p>
 
               <p className="font-semibold mt-2 text-red-500 text-2xl">
-  {new Intl.NumberFormat("en-US", {
-    style: "currency",
-    currency: "NGN",
-  }).format(product.price)}
-</p>
+                {new Intl.NumberFormat("en-US", {
+                  style: "currency",
+                  currency: currency,
+                }).format(convertPrice(product.price))}
+              </p>
+
               <Link
                 to={`/shop/${product.id}`}
                 className="block bg-black text-white text-center mt-3 py-2 rounded"
