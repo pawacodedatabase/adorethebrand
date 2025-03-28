@@ -49,7 +49,7 @@ const BlogBanner: React.FC = () => {
                 </p>
                 <Link to="/blog">
                   <button className="mt-6 px-6 py-2 text-sm bg-black text-white hover:bg-white hover:border hover:text-black hover:border-black mb-9">
-                    View Blogs
+                    View Blog
                   </button>
                 </Link>
               </div>
