@@ -79,7 +79,7 @@ const Shop: React.FC = () => {
               <img
                 src={product.images[0]}
                 alt={product.name}
-                className="w-full h-50 object-cover rounded-md"
+                className="w-full h-40 object-cover rounded-md"
               />
               <h4 className="text-xl font-bold mt-3">{product.name}</h4>
               <p className="text-sm text-gray-600 mt-2">
