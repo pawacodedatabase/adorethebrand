@@ -111,7 +111,7 @@ const App: React.FC = () => {
   to={`https://wa.me/+2349086471660`}
   target="_blank"
   rel="noopener noreferrer"
-  className="fixed bottom-6 right-6 flex items-center gap-2 bg-black text-white py-3 px-5 rounded-full shadow-lg hover:border-2 hover:border-black hover:bg-white hover:text-black transition duration-300 z-[1000000000]"
+  className="fixed bottom-6 left-6 flex items-center gap-2 bg-black text-white py-3 px-5 rounded-full shadow-lg hover:border-2 hover:border-black hover:bg-white hover:text-black transition duration-300 z-[1000000000]"
 >
   <FaWhatsapp size={14} />
   <span className="text-[10px] font-semibold">Contact Us</span>
