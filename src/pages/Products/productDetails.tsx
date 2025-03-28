@@ -3,6 +3,7 @@ import { useParams, Link } from "react-router-dom";
 import { FaHeart, FaInstagram, FaEnvelope, FaShoppingCart } from "react-icons/fa";
 import { products } from "./products";
 import RelatedProducts from "./RelatedProd";
+import FeaturedBlog from "../Blog/featuredBlog";
 
 const ProductDetail: React.FC = () => {
   const { productId } = useParams<{ productId: string }>();
@@ -189,6 +190,7 @@ const ProductDetail: React.FC = () => {
       </div>
 
       <RelatedProducts />
+      <FeaturedBlog/>
     </>
   );
 };

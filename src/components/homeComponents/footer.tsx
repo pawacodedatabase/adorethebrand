@@ -75,8 +75,8 @@ const Footer: React.FC = () => {
 
         {/* Footer Links */}
         <div className="mt-12 border-t border-gray-700 pt-6 text-center">
-          <p className="text-gray-400 text-sm">&copy; 2024 AdoreTheBrand. All Rights Reserved.</p>
-          <div className="mt-2">
+        <p className="text-gray-400 text-sm">&copy; {new Date().getFullYear()} AdoreTheBrand. All Rights Reserved.</p>
+        <div className="mt-2">
 
 
           <Link to="/legal" className="text-gray-400 hover:text-white mx-2 text-sm">Terms of Service
