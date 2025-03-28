@@ -984,7 +984,7 @@ band_5
       id: 57,
       name: "ATB Luxe",
       price: 21000,
-      description: "",
+      description: "Sophistication and timeless style. Handcrafted with care, this bespoke piece from Adore The Brand (ATB) offers exceptional comfort and versatility, making it the perfect addition to any wardrobe.",
       images: [slliiibb_8, slliiibb_9, slliiibb_10, slliiibb_11, slliiibb_12],
       category: "female",
       sizes: ["36", "37", "38", "39", "40", "41"],
