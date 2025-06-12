@@ -27,7 +27,9 @@ const RandomProducts: React.FC = () => {
             />
             <h3 className="mt-4 text-lg font-bold">{product.name}</h3>
             <p className="text-sm text-gray-500">{product.description.split(" ").slice(0,20).join(' ')}...</p>
-            <p className="text-xl font-semibold text-red-600">₦{product.price}</p>
+           <p className="text-xl font-semibold text-red-600">
+  ₦{product.price.toLocaleString()}
+</p>
 
             <div className="mt-4 flex flex-col gap-2">
               {/* View Product Button */}
