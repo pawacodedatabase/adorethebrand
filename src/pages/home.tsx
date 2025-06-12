@@ -5,6 +5,7 @@ import { products } from "../pages/Products/products";
 import RandomProducts from './Products/RelatedProd';
 import BlogBanner from './Blog/blogBanner';
 import FeaturedBlog from './Blog/featuredBlog';
+import RelatedShop from './Backend/relatedshop';
 
 
 
@@ -13,6 +14,7 @@ const Home: React.FC = () => {
 <>
 <HeroSection/>
 <CategoryPage products={products}/>
+<RelatedShop/>
 <RandomProducts/>
 <FeaturedBlog/>
 <BlogBanner/>
