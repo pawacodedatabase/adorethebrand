@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 
-const JSON_BIN_ID = "67e547978561e97a50f3f013"; // Replace with your JSONBin ID
+const JSON_BIN_ID = "ok"; // Replace with your JSONBin ID
 const API_KEY = "$2a$10$M/z2e.cKX1SUsOT62D4pk.gbhiuJhRx0u3VzNAe.DsTPIHHAQE6Zu"; // Replace with your JSONBin API Key
 const BASE_URL = `https://api.jsonbin.io/v3/b/${JSON_BIN_ID}`;
 
