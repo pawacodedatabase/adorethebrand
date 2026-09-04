@@ -5,7 +5,7 @@ import logo from "../../assets/logo.png";
 import { FaArrowAltCircleRight } from "react-icons/fa";
 // import BlogBanner from "./blogBanner";
 
-const JSON_BIN_ID = "67e50b3c8a456b79667d8780"; // Replace with your JSONBin bin ID
+const JSON_BIN_ID = "6a9ada4df5f4af5e296a6bf2"; // Replace with your JSONBin bin ID
 const API_KEY = "$2a$10$M/z2e.cKX1SUsOT62D4pk.gbhiuJhRx0u3VzNAe.DsTPIHHAQE6Zu"; // Replace with your JSONBin API Key
 const BASE_URL = `https://api.jsonbin.io/v3/b/${JSON_BIN_ID}`;
 
@@ -40,14 +40,17 @@ const Blog: React.FC = () => {
 
   return (
     <>
-    {/* <BlogBanner/> */}
+      {/* <BlogBanner/> */}
       <div className="max-w-4xl mx-auto p-6 bg-white shadow-lg rounded-lg">
         <h2 className="text-3xl font-semibold text-center mb-4">Blog</h2>
 
         {loading ? (
           <div className="space-y-4">
             {[...Array(3)].map((_, index) => (
-              <div key={index} className="animate-pulse border p-4 rounded bg-gray-100">
+              <div
+                key={index}
+                className="animate-pulse border p-4 rounded bg-gray-100"
+              >
                 <div className="w-32 h-8 bg-gray-300 rounded mb-2"></div>
                 <div className="w-full h-4 bg-gray-300 rounded mb-2"></div>
                 <div className="w-3/4 h-4 bg-gray-300 rounded mb-2"></div>
@@ -59,29 +62,36 @@ const Blog: React.FC = () => {
           <p className="text-gray-500 text-center">No blogs available.</p>
         ) : (
           <>
-          
-          <div className="space-y-6">
-            {blogs.map((blog) => (
-              <div key={blog.id} className="border p-4 rounded bg-gray-100">
-                <img src={logo} alt="" width={150} />
-                <h4 className="text-xl mt-3 font-bold flex gap-2">
-                  <FaArrowAltCircleRight className="text-red-500 mt-1" />
-                  {blog.title}
-                </h4>
-                <p className="text-sm text-gray-600 mt-3">
-                  {blog.content.slice(0, 150)}...{" "}
-                  <Link to={`/blog/${blog.id}`} className="font-bold text-red-500">
-                    Read More
-                  </Link>
-                </p>
-                <div className="flex justify-between">
-                 <p className="text-xs mt-2">
-                Author: <span className="font-bold">{blog.author || "Unknown"} </span>
-              </p> <p className="text-xs mt-2">at {blog.date}</p>
-              </div>
-              </div>
-            ))}
-          </div></>
+            <div className="space-y-6">
+              {blogs.map((blog) => (
+                <div key={blog.id} className="border p-4 rounded bg-gray-100">
+                  <img src={logo} alt="" width={150} />
+                  <h4 className="text-xl mt-3 font-bold flex gap-2">
+                    <FaArrowAltCircleRight className="text-red-500 mt-1" />
+                    {blog.title}
+                  </h4>
+                  <p className="text-sm text-gray-600 mt-3">
+                    {blog.content.slice(0, 150)}...{" "}
+                    <Link
+                      to={`/blog/${blog.id}`}
+                      className="font-bold text-red-500"
+                    >
+                      Read More
+                    </Link>
+                  </p>
+                  <div className="flex justify-between">
+                    <p className="text-xs mt-2">
+                      Author:{" "}
+                      <span className="font-bold">
+                        {blog.author || "Unknown"}{" "}
+                      </span>
+                    </p>{" "}
+                    <p className="text-xs mt-2">at {blog.date}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </>
         )}
       </div>
     </>

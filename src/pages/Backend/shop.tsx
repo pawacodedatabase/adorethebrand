@@ -2,11 +2,11 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 
-const JSON_BIN_ID = "67e547978561e97a50f3f013";
+const JSON_BIN_ID = "6a9ac0bdf5f4af5e296a0ae1";
 const API_KEY = "$2a$10$M/z2e.cKX1SUsOT62D4pk.gbhiuJhRx0u3VzNAe.DsTPIHHAQE6Zu";
 const BASE_URL = `https://api.jsonbin.io/v3/b/${JSON_BIN_ID}`;
 
-const EXCHANGE_RATE = 0.0013;
+// const EXCHANGE_RATE = 0.0013;
 const PRODUCTS_PER_PAGE = 10;
 
 interface Product {
@@ -24,7 +24,7 @@ interface Product {
 const Shop: React.FC = () => {
   const [products, setProducts] = useState<Product[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
-  const [currency, setCurrency] = useState<"NGN" | "USD">("NGN");
+  // const [currency, setCurrency] = useState<"NGN" | "USD">("NGN");
   const [currentPage, setCurrentPage] = useState<number>(1);
 
   useEffect(() => {
@@ -35,7 +35,7 @@ const Shop: React.FC = () => {
         });
         setProducts(response.data.record.products || []);
       } catch (error) {
-        console.error("Error fetching products:", error , setCurrency);
+        console.error("Error fetching products:");
       } finally {
         setLoading(false);
       }
@@ -44,14 +44,12 @@ const Shop: React.FC = () => {
     fetchProducts();
   }, []);
 
-  const convertPrice = (price: number) => {
-    return currency === "USD" ? price * EXCHANGE_RATE : price;
-  };
+ 
 
   const totalPages = Math.ceil(products.length / PRODUCTS_PER_PAGE);
   const paginatedProducts = products.slice(
     (currentPage - 1) * PRODUCTS_PER_PAGE,
-    currentPage * PRODUCTS_PER_PAGE
+    currentPage * PRODUCTS_PER_PAGE,
   );
 
   const goToPage = (page: number) => {
@@ -89,7 +87,10 @@ const Shop: React.FC = () => {
         <>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             {paginatedProducts.map((product) => (
-              <div key={product.id} className="relative border p-4 rounded bg-gray-100">
+              <div
+                key={product.id}
+                className="relative border p-4 rounded bg-gray-100"
+              >
                 {product.onSale && (
                   <span className="absolute top-2 left-2 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded">
                     ON SALE
@@ -106,12 +107,23 @@ const Shop: React.FC = () => {
                   {product.description.split(" ").slice(0, 20).join(" ")}...
                 </p>
 
-                <p className="font-semibold mt-2 text-red-500 text-2xl">
-                  {new Intl.NumberFormat("en-US", {
-                    style: "currency",
-                    currency: currency,
-                  }).format(convertPrice(product.price))}
-                </p>
+            <p className="font-semibold mt-2 text-2xl flex items-center gap-3">
+  <span className="text-red-500">
+    {new Intl.NumberFormat("en-US", {
+      style: "currency",
+      currency: "USD",
+    }).format(product.price)}
+  </span>
+
+  {product.originalPrice != null && (
+    <span className="text-gray-400 line-through text-lg">
+      {new Intl.NumberFormat("en-US", {
+        style: "currency",
+        currency: "USD",
+      }).format(product.originalPrice)}
+    </span>
+  )}
+</p>
 
                 <Link
                   to={`/shop/${product.id}`}
@@ -133,19 +145,21 @@ const Shop: React.FC = () => {
               Previous
             </button>
 
-            {Array.from({ length: totalPages }, (_, i) => i + 1).map((pageNum) => (
-              <button
-                key={pageNum}
-                onClick={() => goToPage(pageNum)}
-                className={`px-3 py-1 border rounded ${
-                  currentPage === pageNum
-                    ? "bg-black text-white"
-                    : "bg-white text-black"
-                }`}
-              >
-                {pageNum}
-              </button>
-            ))}
+            {Array.from({ length: totalPages }, (_, i) => i + 1).map(
+              (pageNum) => (
+                <button
+                  key={pageNum}
+                  onClick={() => goToPage(pageNum)}
+                  className={`px-3 py-1 border rounded ${
+                    currentPage === pageNum
+                      ? "bg-black text-white"
+                      : "bg-white text-black"
+                  }`}
+                >
+                  {pageNum}
+                </button>
+              ),
+            )}
 
             <button
               onClick={() => goToPage(currentPage + 1)}

@@ -2,10 +2,10 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 
-const JSON_BIN_ID = "67e547978561e97a50f3f013";
+const JSON_BIN_ID = "6a9ac0bdf5f4af5e296a0ae1";
 const API_KEY = "$2a$10$M/z2e.cKX1SUsOT62D4pk.gbhiuJhRx0u3VzNAe.DsTPIHHAQE6Zu";
 const BASE_URL = `https://api.jsonbin.io/v3/b/${JSON_BIN_ID}`;
-const EXCHANGE_RATE = 0.0013;
+// const EXCHANGE_RATE = 0.0013;
 
 interface Product {
   id: number;
@@ -23,7 +23,7 @@ const RelatedShop: React.FC = () => {
   const [products, setProducts] = useState<Product[]>([]);
   const [featured, setFeatured] = useState<Product[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
-  const [currency, setCurrency] = useState<"NGN" | "USD">("NGN");
+  // const [currency, setCurrency] = useState<"NGN" | "USD">("NGN");
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -33,7 +33,7 @@ const RelatedShop: React.FC = () => {
         });
         const allProducts = response.data.record.products || [];
         setProducts(allProducts);
-        console.log(setCurrency)
+        // console.log(setCurrency);
 
         // Select 5 random products for featured
         const shuffled = [...allProducts].sort(() => 0.5 - Math.random());
@@ -48,16 +48,21 @@ const RelatedShop: React.FC = () => {
     fetchProducts();
   }, []);
 
-  const convertPrice = (price: number) => {
-    return currency === "USD" ? price * EXCHANGE_RATE : price;
-  };
+  // const convertPrice = (price: number) => {
+  //   return currency === "USD" ? price * EXCHANGE_RATE : price;
+  // };
 
   return (
     <div className="max-w-5xl mx-auto p-6 bg-white shadow-lg rounded-lg">
-      <h2 className="text-3xl font-semibold text-center mb-4">Featured Products</h2>
+      <h2 className="text-3xl font-semibold text-center mb-4">
+        Featured Products
+      </h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8">
         {featured.map((product) => (
-          <div key={product.id} className="border p-4 rounded bg-gray-100 relative">
+          <div
+            key={product.id}
+            className="border p-4 rounded bg-gray-100 relative"
+          >
             {product.onSale && (
               <span className="absolute top-2 left-2 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded">
                 ON SALE
@@ -72,12 +77,23 @@ const RelatedShop: React.FC = () => {
             <p className="text-sm text-gray-600 mt-2">
               {product.description.split(" ").slice(0, 20).join(" ")}...
             </p>
-            <p className="font-semibold mt-2 text-red-500 text-2xl">
-              {new Intl.NumberFormat("en-US", {
-                style: "currency",
-                currency: currency,
-              }).format(convertPrice(product.price))}
-            </p>
+           <p className="font-semibold mt-2 text-2xl flex items-center gap-3">
+  <span className="text-red-500">
+    {new Intl.NumberFormat("en-US", {
+      style: "currency",
+      currency: "USD",
+    }).format(product.price)}
+  </span>
+
+  {product.originalPrice != null && (
+    <span className="text-gray-400 line-through text-lg">
+      {new Intl.NumberFormat("en-US", {
+        style: "currency",
+        currency: "USD",
+      }).format(product.originalPrice)}
+    </span>
+  )}
+</p>
             <Link
               to={`/shop/${product.id}`}
               className="block bg-black text-white text-center mt-3 py-2 rounded"
@@ -89,11 +105,11 @@ const RelatedShop: React.FC = () => {
       </div>
 
       <div className="text-center mb-8">
-        <Link to={'/shop'}>
-        
-        <p className="bg-black text-white px-6 py-2 rounded">
-          View All Products
-        </p></Link>
+        <Link to={"/shop"}>
+          <p className="bg-black text-white px-6 py-2 rounded">
+            View All Products
+          </p>
+        </Link>
       </div>
 
       <h2 id="all-products" className="text-3xl font-semibold text-center mb-4">
@@ -108,7 +124,10 @@ const RelatedShop: React.FC = () => {
           {Array(4)
             .fill(null)
             .map((_, index) => (
-              <div key={index} className="border p-4 rounded bg-gray-100 animate-pulse">
+              <div
+                key={index}
+                className="border p-4 rounded bg-gray-100 animate-pulse"
+              >
                 <div className="w-full h-40 bg-gray-300 rounded-md"></div>
                 <div className="mt-3 h-4 bg-gray-300 rounded w-3/4"></div>
                 <div className="mt-2 h-3 bg-gray-300 rounded w-1/2"></div>
@@ -121,7 +140,10 @@ const RelatedShop: React.FC = () => {
       ) : (
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
           {products.map((product) => (
-            <div key={product.id} className="border p-4 rounded bg-gray-100 relative">
+            <div
+              key={product.id}
+              className="border p-4 rounded bg-gray-100 relative"
+            >
               {product.onSale && (
                 <span className="absolute top-2 left-2 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded">
                   ON SALE
@@ -136,12 +158,23 @@ const RelatedShop: React.FC = () => {
               <p className="text-sm text-gray-600 mt-2">
                 {product.description.split(" ").slice(0, 20).join(" ")}...
               </p>
-              <p className="font-semibold mt-2 text-red-500 text-2xl">
-                {new Intl.NumberFormat("en-US", {
-                  style: "currency",
-                  currency: currency,
-                }).format(convertPrice(product.price))}
-              </p>
+              <p className="font-semibold mt-2 text-2xl flex items-center gap-3">
+  <span className="text-red-500">
+    {new Intl.NumberFormat("en-US", {
+      style: "currency",
+      currency: "USD",
+    }).format(product.price)}
+  </span>
+
+  {product.originalPrice != null && (
+    <span className="text-gray-400 line-through text-lg">
+      {new Intl.NumberFormat("en-US", {
+        style: "currency",
+        currency: "USD",
+      }).format(product.originalPrice)}
+    </span>
+  )}
+</p>
               <Link
                 to={`/shop/${product.id}`}
                 className="block bg-black text-white text-center mt-3 py-2 rounded"

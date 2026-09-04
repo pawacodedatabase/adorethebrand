@@ -40,19 +40,27 @@ const BlogBanner: React.FC = () => {
               </div>
 
               {/* Text and Call to Action Button on the right */}
-              <div className="w-1/2 p-6 flex flex-col justify-center items-center text-center">
-                <h2 className="text-sm font-bold text-gray-800">
-                  Introducing ATB Blog
-                </h2>
-                <p className="text-gray-600 mt-4 text-sm font-thin">
-                  Discover a world of insightful articles, expert tips, and engaging stories covering a variety of topics. Whether you're looking for style advice, lifestyle hacks, or the latest trends, our blog has something for everyone. Stay informed, inspired, and connected.
-                </p>
-                <Link to="/blog">
-                  <button className="mt-6 px-6 py-2 text-sm bg-black text-white hover:bg-white hover:border hover:text-black hover:border-black mb-9">
-                    View Blog
-                  </button>
-                </Link>
-              </div>
+            
+<div className="w-1/2 p-6 flex flex-col justify-center items-center text-center">
+  <h2 className="text-sm font-bold text-gray-800">
+    Introducing the Red Oak Ranch Journal
+  </h2>
+
+  <p className="text-gray-600 mt-4 text-sm font-thin">
+    Discover stories from the ranch, helpful beef guides, cooking tips, 
+    recipes, and insights into how we raise and prepare quality beef. 
+    From choosing the perfect cut to bringing out the best flavor in 
+    your kitchen, explore everything Red Oak Ranch has to offer.
+  </p>
+
+  <Link to="/blog">
+    <button className="mt-6 px-6 py-2 text-sm bg-black text-white hover:bg-white hover:border hover:text-black hover:border-black mb-9">
+      Visit Our Journal
+    </button>
+  </Link>
+</div>
+```
+
             </div>
           </div>
         </div>

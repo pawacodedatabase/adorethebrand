@@ -12,7 +12,7 @@ import img from "../../assets/BLOG.jpg";
 import fav from "../../assets/female.jpg";
 import FeaturedBlog from "./featuredBlog";
 
-const JSON_BIN_ID = "67e50b3c8a456b79667d8780";
+const JSON_BIN_ID = "6a9ada4df5f4af5e296a6bf2";
 const API_KEY = "$2a$10$M/z2e.cKX1SUsOT62D4pk.gbhiuJhRx0u3VzNAe.DsTPIHHAQE6Zu";
 const BASE_URL = `https://api.jsonbin.io/v3/b/${JSON_BIN_ID}`;
 
@@ -53,24 +53,24 @@ const BlogDetail: React.FC = () => {
 
   return (
     <>
-    
       <div className="text-sm font-semibold ml-4 mt-8">
         <Link to="/">Home</Link> | <Link to="/blog">Blog</Link> | {blog.title}
       </div>
       <div className="max-w-3xl mx-auto p-6 bg-white shadow-md rounded-lg">
-        <h1 className="text-3xl text-center font-bold mt-4 mb-8">{blog.title}</h1>
+        <h1 className="text-3xl text-center font-bold mt-4 mb-8">
+          {blog.title}
+        </h1>
 
         <div className="flex justify-between mb-6">
-        <div className="flex items-center mt-2 text-xs">
-  <p className="font-bold">Author:</p>
-  <img
-    src={fav}
-    className="h-4 w-4 ml-2 mr-2 rounded-full border-2 border-black object-cover"
-    alt="Author"
-  />
-  <span className="font-bold">{blog.author || "Unknown"}</span>
-</div>
-
+          <div className="flex items-center mt-2 text-xs">
+            <p className="font-bold">Author:</p>
+            <img
+              src={fav}
+              className="h-4 w-4 ml-2 mr-2 rounded-full border-2 border-black object-cover"
+              alt="Author"
+            />
+            <span className="font-bold">{blog.author || "Unknown"}</span>
+          </div>
 
           <div>
             <p className="text-xs">at {blog.date}</p>

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
-const JSON_BIN_ID = "67e50b3c8a456b79667d8780"; // Replace with your JSONBin bin ID
+const JSON_BIN_ID = "6a9ada4df5f4af5e296a6bf2"; // Replace with your JSONBin bin ID
 const API_KEY = "$2a$10$M/z2e.cKX1SUsOT62D4pk.gbhiuJhRx0u3VzNAe.DsTPIHHAQE6Zu"; // Replace with your JSONBin API Key
 const BASE_URL = `https://api.jsonbin.io/v3/b/${JSON_BIN_ID}`;
 
@@ -47,7 +47,7 @@ const AdminBlog: React.FC = () => {
     if (editId !== null) {
       // Edit existing blog
       updatedBlogs = blogs.map((blog) =>
-        blog.id === editId ? { ...blog, title, author, content } : blog
+        blog.id === editId ? { ...blog, title, author, content } : blog,
       );
       setEditId(null);
     } else {
@@ -64,7 +64,10 @@ const AdminBlog: React.FC = () => {
 
     try {
       await axios.put(BASE_URL, updatedBlogs, {
-        headers: { "X-Master-Key": API_KEY, "Content-Type": "application/json" },
+        headers: {
+          "X-Master-Key": API_KEY,
+          "Content-Type": "application/json",
+        },
       });
       setBlogs(updatedBlogs);
       setTitle("");
@@ -80,7 +83,10 @@ const AdminBlog: React.FC = () => {
     const updatedBlogs = blogs.filter((blog) => blog.id !== id);
     try {
       await axios.put(BASE_URL, updatedBlogs, {
-        headers: { "X-Master-Key": API_KEY, "Content-Type": "application/json" },
+        headers: {
+          "X-Master-Key": API_KEY,
+          "Content-Type": "application/json",
+        },
       });
       setBlogs(updatedBlogs);
     } catch (error) {
@@ -101,15 +107,21 @@ const AdminBlog: React.FC = () => {
       <h2 className="text-3xl font-semibold text-center text-black mb-6">
         Admin Blog Panel
       </h2>
-     <button onClick={()=> navigate('../blog')} className="w-full bg-black text-white py-2 font-semibold hover:bg-gray-800 transition-all">Check Blog Page</button>
- 
+      <button
+        onClick={() => navigate("../blog")}
+        className="w-full bg-black text-white py-2 font-semibold hover:bg-gray-800 transition-all"
+      >
+        Check Blog Page
+      </button>
+
       {/* Blog Form */}
       <form
         onSubmit={handleSubmit}
         className="bg-gray-100 p-6 rounded-lg shadow-md mb-8"
       >
-
-        <p className="text-2xl font-semibold text-center text-black mb-6">Add New Blog</p>
+        <p className="text-2xl font-semibold text-center text-black mb-6">
+          Add New Blog
+        </p>
         <div className="mb-4">
           <label className="block text-gray-700 font-semibold mb-2">
             Blog Title
@@ -157,7 +169,9 @@ const AdminBlog: React.FC = () => {
       </form>
 
       {/* Blog List */}
-      <h3 className="text-2xl font-semibold text-gray-800 mb-4">Existing Blogs:</h3>
+      <h3 className="text-2xl font-semibold text-gray-800 mb-4">
+        Existing Blogs:
+      </h3>
       {blogs.length === 0 ? (
         <p className="text-gray-500 text-center">No blog posts yet.</p>
       ) : (
@@ -186,11 +200,8 @@ const AdminBlog: React.FC = () => {
                   Delete
                 </button>
               </div>
-
-             
             </div>
           ))}
-
         </div>
       )}
     </div>

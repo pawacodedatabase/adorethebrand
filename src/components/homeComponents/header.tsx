@@ -26,7 +26,7 @@ const Header: React.FC = () => {
             <span className="absolute bottom-0 left-1/2 w-0 h-[2px] bg-black transition-all duration-300 transform -translate-x-1/2 group-hover:w-full group-hover:scale-x-100"></span>
           </Link>
           <Link
-            to="/products"
+            to="/shop"
             className="relative group font-medium text-gray-800 hover:text-black transition duration-300"
           >
             Shop
@@ -81,7 +81,7 @@ const Header: React.FC = () => {
           <Link to="/cart" className="text-xl cursor-pointer text-gray-800 hover:text-red-500 ">
             <FaShoppingCart />
           </Link>
-          <Link to="/products" className="text-xl cursor-pointer text-gray-800 hover:text-red-500 ">
+          <Link to="/shop" className="text-xl cursor-pointer text-gray-800 hover:text-red-500 ">
             <FaShoppingBag />
           </Link>
           <button

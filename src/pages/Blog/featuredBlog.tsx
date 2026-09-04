@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import logo from "../../assets/logo.png";
 import { FaArrowAltCircleRight } from "react-icons/fa";
 
-const JSON_BIN_ID = "67e50b3c8a456b79667d8780"; // Replace with your JSONBin bin ID
+const JSON_BIN_ID = "6a9ada4df5f4af5e296a6bf2"; // Replace with your JSONBin bin ID
 const API_KEY = "$2a$10$M/z2e.cKX1SUsOT62D4pk.gbhiuJhRx0u3VzNAe.DsTPIHHAQE6Zu"; // Replace with your JSONBin API Key
 const BASE_URL = `https://api.jsonbin.io/v3/b/${JSON_BIN_ID}`;
 
@@ -52,7 +52,10 @@ const FeaturedBlog: React.FC = () => {
         // 🛑 Skeleton Loader while fetching data
         <div className="grid gap-6">
           {[1, 2].map((_, index) => (
-            <div key={index} className="border p-4 rounded bg-gray-100 animate-pulse">
+            <div
+              key={index}
+              className="border p-4 rounded bg-gray-100 animate-pulse"
+            >
               <div className="w-24 h-10 bg-gray-300 mx-auto mb-3 rounded"></div>
               <div className="h-4 bg-gray-300 w-3/4 mb-2 rounded"></div>
               <div className="h-3 bg-gray-300 w-full mb-2 rounded"></div>
@@ -62,32 +65,36 @@ const FeaturedBlog: React.FC = () => {
           ))}
         </div>
       ) : featuredBlogs.length === 0 ? (
-        <p className="text-gray-500 text-center">No featured blogs available.</p>
+        <p className="text-gray-500 text-center">
+          No featured blogs available.
+        </p>
       ) : (
         <div className="grid gap-6">
           {featuredBlogs.map((blog) => (
-            
             <div key={blog.id} className="border p-4 rounded bg-gray-100">
-             <Link to={`/blog/${blog.id}`}>
-             
-             <img src={logo} alt="Blog Logo" className="w-24 mx-auto mb-3" />
-              <h4 className="text-xl font-bold flex items-center gap-2">
-                <FaArrowAltCircleRight className="text-red-500" />
-                {blog.title}
-              </h4>
-              <p className="text-sm text-gray-600 mt-3">
-                {blog.content.slice(0, 120)}...
-                <Link to={`/blog/${blog.id}`} className="font-bold text-red-500 ml-1">
-                  Read More
-                </Link>
-              </p>
-              </Link> 
+              <Link to={`/blog/${blog.id}`}>
+                <img src={logo} alt="Blog Logo" className="w-24 mx-auto mb-3" />
+                <h4 className="text-xl font-bold flex items-center gap-2">
+                  <FaArrowAltCircleRight className="text-red-500" />
+                  {blog.title}
+                </h4>
+                <p className="text-sm text-gray-600 mt-3">
+                  {blog.content.slice(0, 120)}...
+                  <Link
+                    to={`/blog/${blog.id}`}
+                    className="font-bold text-red-500 ml-1"
+                  >
+                    Read More
+                  </Link>
+                </p>
+              </Link>
               <div className="flex justify-between">
-                 <p className="text-xs mt-2">
-                Author: <span className="font-bold">{blog.author || "Unknown"} </span>
-              </p> <p className="text-xs mt-2">at {blog.date}</p>
+                <p className="text-xs mt-2">
+                  Author:{" "}
+                  <span className="font-bold">{blog.author || "Unknown"} </span>
+                </p>{" "}
+                <p className="text-xs mt-2">at {blog.date}</p>
               </div>
-             
             </div>
           ))}
         </div>

@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import axios from "axios";
-import RandomProducts from "../Products/RelatedProd";
-import { FaWhatsapp } from "react-icons/fa";
+// import RandomProducts from "../Products/RelatedProd";
+// import { FaWhatsapp } from "react-icons/fa";
 
-const JSON_BIN_ID = "67e547978561e97a50f3f013";
+const JSON_BIN_ID = "6a9ac0bdf5f4af5e296a0ae1";
 const API_KEY = "$2a$10$M/z2e.cKX1SUsOT62D4pk.gbhiuJhRx0u3VzNAe.DsTPIHHAQE6Zu";
 const BASE_URL = `https://api.jsonbin.io/v3/b/${JSON_BIN_ID}`;
 
@@ -34,7 +34,8 @@ const ShopDetails: React.FC = () => {
         });
         const products: Product[] = response.data.record.products || [];
 
-        const selectedProduct = products.find((p) => p.id === Number(id)) || null;
+        const selectedProduct =
+          products.find((p) => p.id === Number(id)) || null;
         setProduct(selectedProduct);
 
         // Set the first image as the default selected image
@@ -62,98 +63,94 @@ const ShopDetails: React.FC = () => {
     );
   }
 
-  if (!product) return <p className="text-center text-red-500">Product not found.</p>;
+  if (!product)
+    return <p className="text-center text-red-500">Product not found.</p>;
 
   return (
     <>
-    <div className="max-w-2xl mx-auto p-6 bg-white">
-    <div className="space-y-4 mb-8"> <p className="font-thin text-gray-800 text-center">How to Order This Product</p> <p className="text-gray-500 text-center p-3"> This product cannot be added to your cart or wishlist. To make a purchase, please click the WhatsApp button below to proceed with your order. Our bespoke shoes are crafted with premium materials for ultimate comfort and style, ensuring a perfect fit for every occasion. </p> </div>
+      <div className="max-w-2xl mx-auto p-6 bg-white">
+        <div className="space-y-4 mb-8">
+          {" "}
+          <p className="font-thin text-gray-800 text-center">
+            How to Order This Product
+          </p>{" "}
+          <p className="text-gray-500 text-center p-3">
+            {" "}
+            This product cannot be added to your cart or wishlist. To make a
+            purchase, please click the Email icon below to proceed with
+            your order. {" "}
+          </p>{" "}
+        </div>
 
+        {/* Main Image Display */}
+        <img
+          src={selectedImage}
+          alt={product.name}
+          className="w-full h-72 object-cover rounded-md border"
+        />
 
-      {/* Main Image Display */}
-      <img
-        src={selectedImage}
-        alt={product.name}
-        className="w-full h-72 object-cover rounded-md border"
-      />
+        {/* Thumbnail Image Gallery */}
+        <div className="flex gap-2 mt-4 overflow-x-auto">
+          {product.images.map((image, index) => (
+            <img
+              key={index}
+              src={image}
+              alt={`Thumbnail ${index + 1}`}
+              className={`w-20 h-20 object-cover rounded-md border cursor-pointer ${
+                selectedImage === image
+                  ? "border-2 border-black"
+                  : "border-gray-300"
+              }`}
+              onClick={() => setSelectedImage(image)}
+            />
+          ))}
+        </div>
+        <button
+          className="text-white font-semibold text-sm bg-black hover:bg-transparent hover:border-2 hover:border-black hover:text-black p-2 mt-5 mb-5"
+          onClick={() => window.history.back()}
+        >
+          Back to Shop
+        </button>
 
-      {/* Thumbnail Image Gallery */}
-      <div className="flex gap-2 mt-4 overflow-x-auto">
-        {product.images.map((image, index) => (
-          <img
-            key={index}
-            src={image}
-            alt={`Thumbnail ${index + 1}`}
-            className={`w-20 h-20 object-cover rounded-md border cursor-pointer ${
-              selectedImage === image ? "border-2 border-black" : "border-gray-300"
-            }`}
-            onClick={() => setSelectedImage(image)}
-          />
-        ))}
-      </div>
-      <button
-        className="text-white font-semibold text-sm bg-black hover:bg-transparent hover:border-2 hover:border-black hover:text-black p-2 mt-5 mb-5"
-        onClick={() => window.history.back()}
-      >
-        Back to Shop
-      </button>
+        {/* Product Info */}
+        <h2 className="text-3xl font-thin text-gray-900 mb-3">
+          {product.name}
+        </h2>
+                <p className="font-semibold mt-2 text-2xl flex items-center gap-3">
+  <span className="text-red-500">
+    {new Intl.NumberFormat("en-US", {
+      style: "currency",
+      currency: "USD",
+    }).format(product.price)}
+  </span>
 
-      {/* Product Info */}
-      <h2 className="text-3xl font-thin text-gray-900 mb-3">{product.name}</h2>
-      <p className="text-xl text-red-600 mt-5 ">₦{product.price}</p>
+  {product.originalPrice != null && (
+    <span className="text-gray-400 line-through text-lg">
+      {new Intl.NumberFormat("en-US", {
+        style: "currency",
+        currency: "USD",
+      }).format(product.originalPrice)}
+    </span>
+  )}
+</p>
+        {/* <p className="text-sm text-center ">We are offering a  <span className="font-bold text-gray-500">20% discount, </span> so the price you will be paying is  <span className=" text-red-600">₦{product.originalPrice}</span></p> */}
 
-{/* <p className="text-sm text-center ">We are offering a  <span className="font-bold text-gray-500">20% discount, </span> so the price you will be paying is  <span className=" text-red-600">₦{product.originalPrice}</span></p> */}
-
-<p className="text-sm text-gray-500 mb-4 mt-5">{product.category}</p>
-
-<div className="space-y-4">
-  <p className="font-thin text-gray-800 text-center">Available Sizes</p>
-  <div className="flex flex-wrap gap-4 justify-center ">
-    {product.sizes?.map((size, index) => (
-      <button
-        key={index}
-        className="w-12 h-12 flex items-center justify-center text-gray-900 font-thin border border-gray-300 rounded-md hover:bg-gray-100 hover:border-black transition-all duration-200"
-      >
-        {size}
-      </button>
-    ))}
-  </div>
-</div>
-
-<div className="space-y-4 mt-5">
-  <p className="font-thin text-gray-800 text-center">Description</p>
-  <p className="text-gray-500 text-center p-3 ">{product.description}</p>
-</div>
-
-<div className="space-y-4">
-  <p className="font-thin text-gray-800 text-center">About Our Brand</p>
-  <p className="text-gray-500 text-center p-3 ">
-    Our bespoke shoes are designed to offer unmatched comfort and style. We use
-    high-quality materials to craft shoes that perfectly fit your feet. Whether
-    you need elegant dress shoes or casual wear, our brand guarantees both luxury
-    and durability. Customize your pair and experience the perfect balance of
-    craftsmanship and style.
-  </p>
-</div>
+        {/* <p className="text-sm text-gray-500 mb-4 mt-5">{product.category}</p> */}
 
      
-    </div>
 
-    <div className="flex justify-center items-center ">
-  <Link
-    to={`https://wa.me/+2349086471660?text=Hi,%20I'm%20interested%20in%20the%20${encodeURIComponent(
-      product.name
-    )}%20for%20₦${product.price}.`}
-    target="_blank"
-    rel="noopener noreferrer"
-    className="flex items-center justify-center gap-2 w-[80%] max-w-sm px-4 bg-black text-white py-3 text-lg font-semibold shadow-lg hover:border-2 hover:border-black hover:bg-white hover:text-black transition duration-300"
-  >
-    <FaWhatsapp size={24} />
-    Contact Us
-  </Link>
-</div>
+        <div className="space-y-4 mt-5">
+          <p className="font-thin text-gray-800 text-center">Description</p>
+          <p className="text-gray-500 text-center p-3 ">
+            {product.description}
+          </p>
+        </div>
 
-{/* <Link
+     
+      </div>
+
+
+      {/* <Link
   to={`https://wa.me/+2349086471660?text=Hi,%20I'm%20interested%20in%20the%20${encodeURIComponent(
     product.name
   )}%20for%20₦${product.price}.`}
@@ -165,10 +162,8 @@ const ShopDetails: React.FC = () => {
   <span className="text-sm font-semibold">Contact Us</span>
 </Link> */}
 
-    <RandomProducts/>
+      {/* <RandomProducts /> */}
     </>
-    
-   
   );
 };
 

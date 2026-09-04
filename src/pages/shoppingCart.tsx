@@ -106,7 +106,7 @@ const Cart: React.FC<{
           <p>Your cart is empty.</p>
           <p className="mt-4 text-gray-700">
             {" "}
-            <Link to="/products" className="text-[#000] underline">
+            <Link to="/shop" className="text-[#000] underline">
               continue shopping
             </Link>
             .

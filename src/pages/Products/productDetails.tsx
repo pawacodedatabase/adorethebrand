@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import { FaHeart, FaInstagram, FaEnvelope, FaShoppingCart } from "react-icons/fa";
 import { products } from "./products";
-import RelatedProducts from "./RelatedProd";
+// import RelatedProducts from "./RelatedProd";
 import FeaturedBlog from "../Blog/featuredBlog";
 
 const ProductDetail: React.FC = () => {
@@ -189,7 +189,7 @@ const ProductDetail: React.FC = () => {
         </Link>
       </div>
 
-      <RelatedProducts />
+      {/* <RelatedProducts /> */}
       <FeaturedBlog/>
     </>
   );
